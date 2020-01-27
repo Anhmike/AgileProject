@@ -6,10 +6,9 @@
     <title>Test Website</title>
   </head>
   <body>
-      
-    <div class="container mt-5" align= "center">
-      <h1>Let's find you some affordable health care</h1>
-    <form>
+    <div class="container mt-5">
+      <h1 class="underline">Let's find you some affordable health care</h1>
+    <form action="search.jsp" method="post">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="What are you looking for?">
     </div>
@@ -18,10 +17,10 @@
         <div class="col">
       <select class="form-control" id="exampleFormControlSelect1">
         <option>Filter By...</option>
-        <option>location</option>
-        <option>Procedure</option>
-        <option>Recommended</option>
-        
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
       </select>
       </div>
       <div class="col">
@@ -32,32 +31,19 @@
         <div class="col">
       <select class="form-control" id="exampleFormControlSelect1">
         <option>Budget</option>
-        <option>5-100</option>
-        <option>100-1000</option>
-        <option>1000-10000</option>
-        <option>10000 and more</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
       </select>
       </div>
       <div class="col">
-        
-		<div class="form-row">
-        <div class="col">
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>How far can you Travel?</option>
-        <option>5-10 miles</option>
-        <option>10-25 miles</option>
-        <option>25-100 miles</option>
-        <option>100 and more miles</option>
-      </select>
+        <input type="text" class="form-control" placeholder="How far can you travel?">
         </div>
       </div>
     </div>
-	
-	
-    <button  type="submit" class="btn btn-primary btn-block " align= "bottom">Search</button>
-	</div>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
   </form>
-
       </div>
   </body>
 </html>
