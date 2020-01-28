@@ -4,9 +4,12 @@ AC31007/AC51003 Agile Software Engineering - Group Number 15
 
 Group Members:
 
-* Member 1 (Matriculation Number)
-* Member 2 (Matriculation Number)
-* Member X (Matriculation Number)
+* Robert Hampton (170005445)
+* Caoilainn McCrory (170001498)
+* Melvin Abraham (170013110)
+* Feng Qu (2393454)
+* Daniel Sewerynski ()
+* Nadeem Naqash ()
 
 ## Project
 Application to help patients around the US to compare prices of

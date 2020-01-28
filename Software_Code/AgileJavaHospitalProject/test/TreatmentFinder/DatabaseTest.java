@@ -46,5 +46,6 @@ public class DatabaseTest {
         Database test = new Database();
         List<String> result = test.dbQuery("SELECT * FROM lol.operations");
         assertFalse("Query Database test", result.isEmpty());
+
     }
 }
