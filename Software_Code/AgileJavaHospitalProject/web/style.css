@@ -1,0 +1,23 @@
+html, body{
+  min-height: 100%;
+}
+h1{
+  font-weight: bold;
+  text-decoration: underline;
+   text-decoration-color: #3E96E8;
+}
+
+
+.btn-primary{
+  height: 4rem;
+  background: #3E96E8;
+  box-shadow: 0px 4px 0px #2C76BA;
+}
+
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3c3c3c;
+}
