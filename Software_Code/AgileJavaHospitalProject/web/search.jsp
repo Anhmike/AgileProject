@@ -1,10 +1,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="TreatmentFinder.Database"%>
-
+<%@page import="TreatmentFinder.hospital"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
-
 
 <!DOCTYPE html>
 <html>
@@ -17,15 +16,23 @@
     <body>
         <h1>Hello World!</h1>
         <% 
-
             Database test = new Database();
-            List<String> result = test.dbQuery("SELECT * FROM lol.operations");
-            Iterator iterator = result.iterator();
+            List<hospital> Hospital;
+
+            Hospital = test.dbQuery("SELECT * FROM lol.operations");
+
+            
+            for(hospital obj : Hospital)
+            {
+                out.print("<p> Id:"+obj.getProviderId() +" Name:"+ obj.getProviderName()+ " TotalPayments:"+ obj.getTotalPayments() + "</p>");
+            }
+            /*
+            Iterator iterator = hospital.iterator();
+            
             while(iterator.hasNext()) {
                out.print("<p>" + iterator.next() + "<p>");
             }
+            */
         %>
-
-
     </body>
 </html>
