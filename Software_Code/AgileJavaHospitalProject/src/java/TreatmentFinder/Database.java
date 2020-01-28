@@ -13,12 +13,6 @@ public class Database {
  * @return a connection to the database if successful, otherwise will return null
  */
     
-    public static void main(String args[])
-    {
-        Database test = new Database();
-        List<hospital> hospital = test.dbQuery("SELECT * FROM lol.operations");
-                        System.out.print("222");
-    }
     
     public Connection dbConnect() {
         Connection connect = null;
@@ -83,11 +77,6 @@ public class Database {
         }
         catch (Exception e) {
             
-        }
-        
-        for(hospital obj : result)
-        {
-            System.out.println("Info:"+obj.getProviderId());
         }
         
         return result;
