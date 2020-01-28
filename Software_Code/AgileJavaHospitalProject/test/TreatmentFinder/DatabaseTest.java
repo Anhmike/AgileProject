@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package TreatmentFinder;
+import java.sql.*;
+import java.util.List;
 import static junit.framework.Assert.*;
 import org.junit.Test;
 import org.junit.*;
@@ -35,7 +37,15 @@ public class DatabaseTest {
     @Test
     public void testdbConnect() {
         Database test = new Database();
-        boolean connected = test.dbConnect();
-        assertTrue("Connection to database test", connected);
+        Connection con = test.dbConnect();
+        assertNotNull("Connection to database test", con);
+    }
+    
+    @Test
+    public void testdbQuery() {
+        Database test = new Database();
+        List<String> result = test.dbQuery("SELECT * FROM lol.operations");
+        assertFalse("Query Database test", result.isEmpty());
+
     }
 }
