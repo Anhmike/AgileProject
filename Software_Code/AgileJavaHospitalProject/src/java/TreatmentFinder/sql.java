@@ -24,4 +24,10 @@ public class sql {
     }
     
     
+    public static String selectByCode(int code)
+    {
+        return "SELECT * FROM lol.operations where Provider_Id = "+code;
+    }
+    
+    
 }
