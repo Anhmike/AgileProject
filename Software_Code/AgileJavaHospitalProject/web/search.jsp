@@ -16,15 +16,19 @@
         <title>Search Results</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Search Results</h1>
         
-        <table class="table">
+        <div class="container">
+        <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Procedure</th>
+      <th scope="col">Provider Name</th>
+      <th scope="col">Provider Address</th>
+      <th scope="col">Provider City</th>
+      <th scope="col">Provider State</th>
+      <th scope="col">Provider Zip code</th>
+      <th scope="col">Average Total Payments</th>
     </tr>
   </thead>
   <tbody>
@@ -48,6 +52,8 @@
 
         %>
         </tbody>
+      </table>
+       </div>
 
     </body>
 </html>
