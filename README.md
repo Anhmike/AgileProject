@@ -9,7 +9,7 @@ Group Members:
 * Melvin Abraham (170013110)
 * Feng Qu (2393454)
 * Daniel Sewerynski ()
-* Nadeem Naqash ()
+* Naqash Nadeem (160010238)
 
 ## Project
 Application to help patients around the US to compare prices of
