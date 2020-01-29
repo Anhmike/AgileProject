@@ -1,11 +1,24 @@
 
+<%@page import="java.util.Comparator"%>
+<%@page import="java.util.Collections"%>
+<%@page import="TreatmentFinder.Helper"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="org.json.JSONArray"%>
+<%@page import="java.util.Scanner"%>
+<%@page import="org.json.JSONObject"%>
+<%@page import="java.io.InputStream"%>
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.net.URLConnection"%>
+<%@page import="java.net.URL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="TreatmentFinder.Database"%>
+
 <%@page import="TreatmentFinder.Procedure"%>
+
+<%@page import="TreatmentFinder.sql"%>
 
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
-
 
 <!DOCTYPE html>
 <html>
@@ -17,6 +30,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+
         
         <table class="table">
   <thead class="thead-dark">
@@ -30,10 +44,69 @@
   <tbody>
 
         <% 
+            List<ArrayList<String>> distances = new ArrayList<ArrayList<String>>();
             String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
+            int maxDistance = Integer.parseInt(request.getParameter("max-distance"));
             Database test = new Database();
             List<Procedure> result = test.dbQuery(search);
-                        for(Procedure obj : result)
+            
+            if(request.getParameter("options").equals("1")) { 
+                String inputLocation = request.getParameter("location");
+                
+                
+                URLConnection connection = new URL("https://api.mapbox.com/geocoding/v5/mapbox.places/" + URLEncoder.encode(inputLocation, "UTF-8") + ".json?access_token=pk.eyJ1IjoidGVhbTE1YWdpbGUiLCJhIjoiY2s1djVyOTJnMDh2czNsbGIxaG05NnI5bSJ9.xY_RVRU92qjmMJ0QCkrodw").openConnection();
+                connection.setRequestProperty("Accept-Charset", "UTF-8");
+                InputStream resp = connection.getInputStream();
+                
+                    Scanner sc = new Scanner(resp);
+                //Reading line by line from scanner to StringBuffer
+                StringBuffer sb = new StringBuffer();
+                while(sc.hasNext()){
+                   sb.append(sc.nextLine());
+                }
+
+                
+                JSONObject jsonObject = new JSONObject(sb.toString());
+                JSONArray coordinates = jsonObject.getJSONArray("features").getJSONObject(0).getJSONObject("geometry").getJSONArray("coordinates");
+                
+//                  lat1, lon1 Start point lat2, lon2 End point el1 Start altitude in meters
+//  el2 End altitude in meters
+                
+               
+                for(Procedure obj : result)
+                {
+                    if(maxDistance == 0)
+                    {
+                        maxDistance = 100;
+                    }
+                    
+                    ArrayList temp = new ArrayList();
+                    temp.add(obj.getProviderId());
+                    double miles = Helper.distance(coordinates.getDouble(1), obj.getLatitude(), coordinates.getDouble(0), obj.getLongitude(), 0.0, 0.0) / 1609;
+                    temp.add(String.valueOf(miles));
+                    if(miles < maxDistance)
+                    {
+                        distances.add(temp);
+                    }
+                    
+                }
+                
+                Collections.sort(distances, new Comparator<ArrayList<String>>() {    
+                        @Override
+                        public int compare(ArrayList<String> o1, ArrayList<String> o2) {
+                          Double num1 = Double.parseDouble(o1.get(1));
+                    
+                            return num1.compareTo(Double.parseDouble(o2.get(1)));
+                        }               
+                });
+                
+                out.print(distances);
+                
+                
+            }
+            
+               
+             for(Procedure obj : result)
             {
                 out.print("<tr>");
                 out.print("<td>" + obj.getDRG() + "</td>");

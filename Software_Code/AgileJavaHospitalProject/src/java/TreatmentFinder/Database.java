@@ -38,8 +38,7 @@ public class Database {
     public List<Procedure> dbQuery(String query) {
         List<Procedure> result = new ArrayList<Procedure>();
         Connection connect = dbConnect();
-        
-                                
+                    
         try {
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(query);
@@ -58,8 +57,10 @@ public class Database {
                 int zipCode = rs.getInt("Provider_Zip_Code");
                 String HRR = rs.getString("HRR_Description");
                 float charges = rs.getFloat("Average_Total_Payments");
+                double longitude = rs.getDouble("Longi");
+                double latitude = rs.getDouble("Lat");
                 
-                Procedure proc1 = new Procedure(DRG,id, name, street, city, state, zipCode, HRR, charges );
+                Procedure proc1 = new Procedure(DRG,id, name, street, city, state, zipCode, HRR, charges, longitude, latitude );
 
 
                 result.add(proc1);

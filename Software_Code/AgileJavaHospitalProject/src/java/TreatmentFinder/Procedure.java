@@ -19,8 +19,10 @@ public class Procedure {
    private int providerZipCode = 0;
    private String HRR = "";
    private float totalPayments = 0;
+   private double longitude = 0;
+    private double latitude = 0;
    
-   public Procedure(String DRG, int providerId, String providerName, String providerStreetAddress, String providerCity, String providerState, int providerZipCode, String HRR, float totalPayments) { 
+   public Procedure(String DRG, int providerId, String providerName, String providerStreetAddress, String providerCity, String providerState, int providerZipCode, String HRR, float totalPayments, double longitude, double latitude) { 
        this.DRG = DRG;
        this.providerId = providerId;
        this.providerName = providerName;
@@ -30,6 +32,8 @@ public class Procedure {
        this.providerZipCode = providerZipCode;
        this.HRR = HRR;
        this.totalPayments = totalPayments;
+       this.longitude = longitude;
+       this.latitude = latitude;
        
    }
 
@@ -69,6 +73,15 @@ public class Procedure {
    {
        this.totalPayments = totalPayments;
    }
+   
+   public void setLongitude(double longitude)
+   {
+       this.longitude = longitude;
+   }
+   public void setLatitude(double latitude)
+   {
+       this.latitude = latitude;
+   }
 
    
    public String getDRG()
@@ -106,5 +119,13 @@ public class Procedure {
    public float getTotalPayments()
    {
        return totalPayments;
+   }
+   public double getLongitude()
+   {
+       return longitude;
+   }
+   public double getLatitude()
+   {
+       return latitude;
    }
 }
