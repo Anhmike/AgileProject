@@ -1,11 +1,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="TreatmentFinder.Database"%>
+
 <%@page import="TreatmentFinder.Procedure"%>
 
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
-
 
 <!DOCTYPE html>
 <html>
@@ -17,6 +17,7 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+
         
         <table class="table">
   <thead class="thead-dark">
