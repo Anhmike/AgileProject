@@ -49,6 +49,7 @@
             int maxDistance = Integer.parseInt(request.getParameter("max-distance"));
             Database test = new Database();
             List<Procedure> result = test.dbQuery(search);
+            List<Procedure> display = new ArrayList();
             
             if(request.getParameter("options").equals("1")) { 
                 String inputLocation = request.getParameter("location");
@@ -87,6 +88,8 @@
                     if(miles < maxDistance)
                     {
                         distances.add(temp);
+                        obj.setDistance(miles);
+                        display.add(obj);
                     }
                     
                 }
@@ -100,13 +103,20 @@
                         }               
                 });
                 
-                out.print(distances);
                 
                 
             }
             
-               
-             for(Procedure obj : result)
+            Collections.sort(display, new Comparator<Procedure>() {
+            @Override
+            public int compare(Procedure u1, Procedure u2) {
+                Double num = u1.getDistance();
+              return num.compareTo(u2.getDistance());
+            }
+          });
+            
+             //Now sorts by distance/ shows distance, but kind of ugly should refactor
+             for(Procedure obj : display)
             {
                 out.print("<tr>");
                 out.print("<td>" + obj.getDRG() + "</td>");
@@ -116,6 +126,7 @@
                 out.print("<td>" + obj.getProviderState() + "</td>");
                 out.print("<td>" + obj.getProviderZipCode() + "</td>");
                 out.print("<td>" + obj.getTotalPayments() + "</td>");
+                out.print("<td>" + obj.getDistance() + "</td>");
                out.print("</tr>");
             }
 

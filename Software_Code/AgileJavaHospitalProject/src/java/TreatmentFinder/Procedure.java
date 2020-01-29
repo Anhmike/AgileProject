@@ -21,6 +21,7 @@ public class Procedure {
    private float totalPayments = 0;
    private double longitude = 0;
     private double latitude = 0;
+   private double distanceFromUser = 0;
    
    public Procedure(String DRG, int providerId, String providerName, String providerStreetAddress, String providerCity, String providerState, int providerZipCode, String HRR, float totalPayments, double longitude, double latitude) { 
        this.DRG = DRG;
@@ -82,6 +83,11 @@ public class Procedure {
    {
        this.latitude = latitude;
    }
+   
+   public void setDistance(double distanceFromUser)
+   {
+       this.distanceFromUser = distanceFromUser;
+   }
 
    
    public String getDRG()
@@ -127,5 +133,9 @@ public class Procedure {
    public double getLatitude()
    {
        return latitude;
+   }
+   public double getDistance()
+   {
+       return distanceFromUser;
    }
 }
