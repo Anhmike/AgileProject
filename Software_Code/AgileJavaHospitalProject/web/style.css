@@ -12,11 +12,18 @@ table {
     word-wrap: break-word;
 }
 
-
-.navbar-brand{
-  font-weight: light;
+.accent{
+color: #3E96E8;
 }
 
+.navbar-brand{
+  font-weight: bold;
+}
+
+.form-control{
+  background: #E1E1E1;
+  border: none;
+}
 
 .btn-primary{
   height: 4rem;
@@ -24,12 +31,19 @@ table {
   box-shadow: 0px 4px 0px #2C76BA;
 }
 
-.footer{
+.float-right{
+  position: absolute;
+  right: 150px;
+}
+
+footer{
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #3c3c3c;
+  color: #fff;
+  vertical-align: middle;
 }
 
 #map {
