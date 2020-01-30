@@ -54,9 +54,9 @@ public class Database {
                 String HRR = rs.getString("HRR_Description");
                 float charges = rs.getFloat("Average_Total_Payments");
                 
-                Procedure proc1 = new Procedure(DRG,id, name, street, city, state, zipCode, HRR, charges );
+                Procedure proc = new Procedure(DRG,id, name, street, city, state, zipCode, HRR, charges );
 
-                result.add(proc1);
+                result.add(proc);
             }
             rs.close();
             stmt.close();

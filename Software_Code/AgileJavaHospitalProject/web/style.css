@@ -7,6 +7,13 @@ h1{
    text-decoration-color: #3E96E8;
 }
 
+table { 
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+
+
 
 .btn-primary{
   height: 4rem;
@@ -20,4 +27,18 @@ h1{
   bottom: 0;
   width: 100%;
   background-color: #3c3c3c;
+}
+
+#map { 
+    height: 500px;
+    width: 500px;
+}
+
+.marker {
+  background-image: url('https://www.pinclipart.com/picdir/middle/174-1747068_vector-graphics-google-map-marker-green-clipart.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
 }
