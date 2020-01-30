@@ -59,7 +59,7 @@ public class Database {
                 
                 Procedure proc1 = new Procedure(DRG,id, name, street, city, state, zipCode, HRR, charges, longitude, latitude );
 
-                result.add(proc);
+                result.add(proc1);
             }
             rs.close();
             stmt.close();
