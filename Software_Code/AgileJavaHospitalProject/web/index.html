@@ -8,7 +8,7 @@
     <title>Treatment Finder</title>
     <script>
         function updateTextInput(val) {
-          document.getElementById('textInput').value=val; 
+          document.getElementById('textInput').value=val;
         }
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -73,15 +73,12 @@
           </div>
             </br>
           <!--Start of row 3-->
-          <div class="row">
-            <div class="col">
-              <select class="form-control form-control-lg" name="budget" >
-                <option>Sort Budget by </option>
-                <option>Price (High to Low)</option>
-                <option>Price (Low to High)</option>
-              </select>
-            </div>
+          <div class="slidecontainer col-13">
+                    <label>Maximum Price</label>
+                    <input type="range" class="custom-range" name="rangeInput" min="1" max="600000" onchange="updateTextInput(this.value);">
+                    <label>$<input type="text" name="price" id="textInput" value="300000" style="border: none;"></label>
           </div>
+        </div>
           </br>
 
           <button type="submit" class="btn btn-primary btn-block">Search</button>
@@ -92,25 +89,6 @@
     <footer class="py-5">
       <div class="container">
         <div class="row">
-
-          <div class="col">
-            <select class="form-control form-control-lg" name="budget" >
-              <option>Sort Price by </option>
-              <option>Price (High to Low)</option>
-              <option>Price (Low to High)</option>
-            </select>
-          </div>
-        </div>
-          </br> 
-        <div class="slidecontainer col-13">
-                  <label>Maximum Price</label>
-                  <input type="range" class="custom-range" name="rangeInput" min="1" max="600000" onchange="updateTextInput(this.value);">
-                  <label>$<input type="text" name="price" id="textInput" value="300000" style="border: none;"></label>
-                </div>
-
-          
-          
-      <button type="submit" class="btn btn-primary btn-block">Search</button>
 
           <h6>© Craneware 2020</h6>
           <div class="float-right">
