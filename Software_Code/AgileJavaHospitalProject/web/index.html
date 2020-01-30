@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"  crossorigin="anonymous">
+    <link href="fontawesome-free/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Treatment Finder</title>
 
@@ -12,7 +13,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <div class="container">
-     <a class="navbar-brand display-1" href="#">Treatment Finder</a>
+     <a class="navbar-brand" href="index.html"><h4>Treatment <span class="accent">Finder</span></h4></a>
    </div>
  </nav>
 
@@ -51,44 +52,49 @@
 
           </div>
         </div>
-      </br>
-        <!--Start of row 2-->
-        <div class="row">
-          <div class="col">
-              <input name="location" type="text" class="form-control form-control-lg"  placeholder="Where are you from?">
+        </br>
+          <!--Start of row 2-->
+          <div class="row">
+            <div class="col">
+                <input name="location" type="text" class="form-control form-control-lg"  placeholder="Where are you from?">
+            </div>
+            <div class="col">
+              <select name="max-distance" class="form-control form-control-lg" id="exampleFormControlSelect1">
+                <option value="0">How far are you willing to travel?</option>
+                <option value="10">10 miles</option>
+                <option value="20">20 miles</option>
+                <option value="50">50 miles</option>
+                <option value="100">100 miles</option>
+              </select>
+            </div>
           </div>
-          <div class="col">
-            <select name="max-distance" class="form-control form-control-lg" id="exampleFormControlSelect1">
-              <option value="0">How far are you willing to travel?</option>
-              <option value="10">10 miles</option>
-              <option value="20">20 miles</option>
-              <option value="50">50 miles</option>
-              <option value="100">100 miles</option>
-            </select>
+            </br>
+          <!--Start of row 3-->
+          <div class="row">
+            <div class="col">
+              <select class="form-control form-control-lg" name="budget" >
+                <option>Sort Budget by </option>
+                <option>Price (High to Low)</option>
+                <option>Price (Low to High)</option>
+              </select>
+            </div>
           </div>
-        </div>
-          </br>
-        <!--Start of row 3-->
-        <div class="row">
-          <div class="col">
-            <select class="form-control form-control-lg" name="budget" >
-              <option>Sort Budget by </option>
-              <option>Price (High to Low)</option>
-              <option>Price (Low to High)</option>
-            </select>
-          </div>
-        </div>
           </br>
 
-      <button type="submit" class="btn btn-primary btn-block">Search</button>
-    </div>
-  </form>
-
+          <button type="submit" class="btn btn-primary btn-block">Search</button>
+        </div>
+      </form>
     </main>
-    <footer class="footer">
+
+    <footer class="py-5">
       <div class="container">
-         <span class="text-muted">©Craneware 2020</span>
-      </div>
+        <div class="row">
+          <h6>© Craneware 2020</h6>
+          <div class="float-right">
+            <i class="fab fa-twitter-square fa-2x fa-fw"></i><i class="fab fa-facebook fa-2x fa-fw"></i><i class="fab fa-instagram fa-2x fa-fw"></i>
+          </div>
+        </div>
+    </div>
     </footer>
   </body>
 </html>
