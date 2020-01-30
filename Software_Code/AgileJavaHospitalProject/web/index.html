@@ -5,101 +5,85 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"  crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Test Website</title>
+    <title>Treatment Finder</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <header>
-     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-       <a class="navbar-brand" href="#">Carousel</a>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-       </button>
-       <div class="collapse navbar-collapse" id="navbarCollapse">
-         <ul class="navbar-nav mr-auto">
-           <li class="nav-item active">
-             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-           </li>
-           <li class="nav-item">
-             <a class="nav-link" href="#">Link</a>
-           </li>
-           <li class="nav-item">
-             <a class="nav-link disabled" href="#">Disabled</a>
-           </li>
-         </ul>
-       </div>
-     </nav>
-   </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <div class="container">
+     <a class="navbar-brand display-1" href="#">Treatment Finder</a>
+   </div>
+ </nav>
 
     <main role="main">
       <div id="header" class="container mt-5">
-        <!-- <br><img src="CRW.jpg" alt="Craneware Logo"><br> -->
         <br>
         <h1>Let's find you some affordable</h1>
         <h1>health care!</h1>
       <form action="search.jsp" method="post">
         <br>
 
+
+        <!--Start of row 1-->
         <div class="form-group">
-        <input name="desc" type="text" class="form-control" placeholder="What are you looking for?" list="dataListForSelect" required/>
-            <datalist id="dataListForSelect" >
-
-                <option value="ALCOHOL/DRUGS" />
-                <option value="BACK PROBLEMS" />
-                <option value="BONE" />
-                <option value="DIABETES" />
-                <option value="FRACTURES" />
-                <option value="HEART" />
-                <option value="HEMORRHAGE" />
-                <option value="ISCHEMIA" />
-                <option value="KIDNEY" />
-                <option value="MOUTH" />
-                <option value="NECK" />
-                <option value="PNEUMONIA" />
-                <option value="SEIZURES" />
-                <option value="RESPIRATORY" />
-
-            </datalist>
-      </div>
-
-
-      <div class="form-group">
-        <div class="form-row mb-3">
+        <div class="row">
           <div class="col">
-        <select name="options" class="form-control" id="exampleFormControlSelect1">
-          <option >Filter By...</option>
-          <option value="1">Distance</option>
-          <option value="2">3</option>
-          <option value="3">4</option>
-          <option value="4">5</option>
-        </select>
-        </div>
-        <div class="col">
+            <input name="desc" type="text" class="form-control form-control-lg" placeholder="What are you looking for?" list="dataListForSelect" required/>
+                <datalist id="dataListForSelect" >
 
-          <input name="location" type="text" class="form-control"  placeholder="Where are you from?">
+                    <option value="ALCOHOL/DRUGS" />
+                    <option value="BACK PROBLEMS" />
+                    <option value="BONE" />
+                    <option value="DIABETES" />
+                    <option value="FRACTURES" />
+                    <option value="HEART" />
+                    <option value="HEMORRHAGE" />
+                    <option value="ISCHEMIA" />
+                    <option value="KIDNEY" />
+                    <option value="MOUTH" />
+                    <option value="NECK" />
+                    <option value="PNEUMONIA" />
+                    <option value="SEIZURES" />
+                    <option value="RESPIRATORY" />
+
+                </datalist>
+
           </div>
         </div>
-        <div class="form-row">
+      </br>
+        <!--Start of row 2-->
+        <div class="row">
           <div class="col">
-        <select class="form-control" name="budget" >
-          <option>Sort Budget by </option>
-          <option>Price (High to Low)</option>
-          <option>Price (Low to High)</option>
-        </select>
-        </div>
-        <div class="col">
-          <select name="max-distance" class="form-control" id="exampleFormControlSelect1">
-          <option value="0">How far are you willing to travel?</option>
-          <option value="10">10 miles</option>
-          <option value="20">20 miles</option>
-          <option value="50">50 miles</option>
-          <option value="100">100 miles</option>
+              <input name="location" type="text" class="form-control form-control-lg"  placeholder="Where are you from?">
+          </div>
+          <div class="col">
+            <select name="max-distance" class="form-control form-control-lg" id="exampleFormControlSelect1">
+              <option value="0">How far are you willing to travel?</option>
+              <option value="10">10 miles</option>
+              <option value="20">20 miles</option>
+              <option value="50">50 miles</option>
+              <option value="100">100 miles</option>
             </select>
           </div>
         </div>
-      </div>
+          </br>
+        <!--Start of row 3-->
+        <div class="row">
+          <div class="col">
+            <select class="form-control form-control-lg" name="budget" >
+              <option>Sort Budget by </option>
+              <option>Price (High to Low)</option>
+              <option>Price (Low to High)</option>
+            </select>
+          </div>
+        </div>
+          </br>
+
       <button type="submit" class="btn btn-primary btn-block">Search</button>
+    </div>
   </form>
-      </div>
+
     </main>
     <footer class="footer">
       <div class="container">
