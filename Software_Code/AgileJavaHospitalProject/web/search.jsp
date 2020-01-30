@@ -1,4 +1,3 @@
-
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Comparator"%>
 <%@page import="java.util.Collections"%>
@@ -110,7 +109,7 @@
           });
             
              //Now sorts by distance/ shows distance, but kind of ugly should refactor
-             for(Procedure obj : display)
+             for(Procedure obj : display) 
             {
                 out.print("<tr>");
                 out.print("<td>" + obj.getDRG() + "</td>");
