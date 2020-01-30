@@ -44,7 +44,6 @@
   <tbody>
 
         <% 
-            List<ArrayList<String>> distances = new ArrayList<ArrayList<String>>();
             String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
             int maxDistance = Integer.parseInt(request.getParameter("max-distance"));
             Database test = new Database();
@@ -87,23 +86,11 @@
                     temp.add(String.valueOf(miles));
                     if(miles < maxDistance)
                     {
-                        distances.add(temp);
                         obj.setDistance(miles);
                         display.add(obj);
                     }
                     
                 }
-                
-                Collections.sort(distances, new Comparator<ArrayList<String>>() {    
-                        @Override
-                        public int compare(ArrayList<String> o1, ArrayList<String> o2) {
-                          Double num1 = Double.parseDouble(o1.get(1));
-                    
-                            return num1.compareTo(Double.parseDouble(o2.get(1)));
-                        }               
-                });
-                
-                
                 
             }
             
