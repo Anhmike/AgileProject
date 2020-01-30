@@ -1,5 +1,5 @@
 html, body{
-  min-height: 100%;
+  height: 100%;
 }
 h1{
   font-weight: bold;
@@ -35,17 +35,18 @@ color: #3E96E8;
   position: absolute;
   right: 150px;
 }
-
+/*
 footer{
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
+  
   background-color: #3c3c3c;
   color: #fff;
   vertical-align: middle;
 }
-
+*/
 #map {
     height: 500px;
     width: 500px;

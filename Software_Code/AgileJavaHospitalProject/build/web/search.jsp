@@ -1,3 +1,5 @@
+
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Comparator"%>
 <%@page import="java.util.Collections"%>
 <%@page import="TreatmentFinder.Helper"%>
@@ -11,8 +13,10 @@
 <%@page import="java.net.URL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="TreatmentFinder.Database"%>
+
 <%@page import="TreatmentFinder.Procedure"%>
 <%@page import="TreatmentFinder.sql"%>
+
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
 
@@ -33,7 +37,7 @@
     </head>
     <body>
         <h1>Search Results</h1>
-        
+
         <div class="container-fluid">
             <div class="row">
             <div class="col-lg-7">
@@ -45,44 +49,61 @@
       <th scope="col">Address</th>
       <th scope="col">Zip code</th>
       <th scope="col">Average Cost</th>
+      <th scope="col">Distance</th>
     </tr>
   </thead>
   <tbody>
 
-        <% 
-            String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
+        <%
+
+
+	    
+            String sort = request.getParameter("budget");
+            String price = request.getParameter("price");
+            String search = request.getParameter("desc");
+            JSONArray coordinates = null;
+            //String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
+	    
+
             int maxDistance = Integer.parseInt(request.getParameter("max-distance"));
             Database test = new Database();
-            List<Procedure> result = test.dbQuery(search);
-            List<Procedure> display = new ArrayList();
             
-            if(request.getParameter("options").equals("1")) { 
-                String inputLocation = request.getParameter("location");
-                
-                
+            List<Procedure> result = null;
+
+            result = test.dbQuery("call lol.sortLowToHigh(\"" +search+"\","+ price + ")");
+           
+            //List<Procedure> result = test.dbQuery("SELECT * FROM lol.operations where DRG_Definition LIKE '%"+search+"%'");
+            List<Procedure> display = new ArrayList();
+
+            String loc = request.getParameter("location");
+            String inputLocation = "";
+            if( loc != null && !loc.isEmpty()) {
+                 inputLocation = request.getParameter("location");
                 URLConnection connection = new URL("https://api.mapbox.com/geocoding/v5/mapbox.places/" + URLEncoder.encode(inputLocation, "UTF-8") + ".json?access_token=pk.eyJ1IjoidGVhbTE1YWdpbGUiLCJhIjoiY2s1djVyOTJnMDh2czNsbGIxaG05NnI5bSJ9.xY_RVRU92qjmMJ0QCkrodw").openConnection();
                 connection.setRequestProperty("Accept-Charset", "UTF-8");
                 InputStream resp = connection.getInputStream();
-                
                     Scanner sc = new Scanner(resp);
                 //Reading line by line from scanner to StringBuffer
                 StringBuffer sb = new StringBuffer();
                 while(sc.hasNext()){
                    sb.append(sc.nextLine());
                 }
-
-                
                 JSONObject jsonObject = new JSONObject(sb.toString());
-                JSONArray coordinates = jsonObject.getJSONArray("features").getJSONObject(0).getJSONObject("geometry").getJSONArray("coordinates");
+                coordinates = jsonObject.getJSONArray("features").getJSONObject(0).getJSONObject("geometry").getJSONArray("coordinates");
+            }
+            else {
+                double lat = Double.parseDouble(request.getParameter("browser-location-lat"));
+                double lon = Double.parseDouble(request.getParameter("browser-location-lon"));
                 
-               
+                double[] coArr = {lon, lat};
+                coordinates = new JSONArray(coArr);
+            }
                 for(Procedure obj : result)
                 {
                     if(maxDistance == 0)
                     {
                         maxDistance = 100;
                     }
-                    
                     ArrayList temp = new ArrayList();
                     temp.add(obj.getProviderId());
                     double miles = Helper.distance(coordinates.getDouble(1), obj.getLatitude(), coordinates.getDouble(0), obj.getLongitude(), 0.0, 0.0) / 1609;
@@ -92,10 +113,7 @@
                         obj.setDistance(miles);
                         display.add(obj);
                     }
-                    
                 }
-                
-            }
             
             Collections.sort(display, new Comparator<Procedure>() {
             @Override
@@ -104,7 +122,6 @@
               return num.compareTo(u2.getDistance());
             }
           });
-            
              //Now sorts by distance/ shows distance, but kind of ugly should refactor
              for(Procedure obj : display)
             {
@@ -113,11 +130,10 @@
                 out.print("<td>" + obj.getProviderName() + "</td>");
                 out.print("<td>" + obj.getProviderStreetAddress() + ", " + obj.getProviderCity() + ", " + obj.getProviderState() + "</td>");
                 out.print("<td>" + obj.getProviderZipCode() + "</td>");
-                out.print("<td>" + obj.getTotalPayments() + "</td>");
-                out.print("<td>" + obj.getDistance() + "</td>");
+                out.print("<td>" + "$" + obj.getTotalPayments() + "</td>");
+                out.print("<td>" + Math.round(obj.getDistance()) + " miles" + "</td>");
                 out.print("</tr>");
             }
-
         %>
         </tbody>
       </table>
@@ -132,63 +148,32 @@
         $(document).ready( function () {
             $('#myTable').DataTable();
         } );
-        
-        
         mapboxgl.accessToken = 'pk.eyJ1IjoidGVhbTE1YWdpbGUiLCJhIjoiY2s1djVyOTJnMDh2czNsbGIxaG05NnI5bSJ9.xY_RVRU92qjmMJ0QCkrodw';
         var map = new mapboxgl.Map({
                   container: 'map',
                   style: 'mapbox://styles/mapbox/light-v10',
-                  center: [ -99.943118, 32.664761],
+                  center: {lng: <% out.print(coordinates.get(0));%>, lat: <% out.print(coordinates.get(1));%>},
                   zoom: 12
                 });
-        
-        
         var locations = {
   "type": "FeatureCollection",
   "features": [
-    <% 
-        ArrayList<ArrayList<String>> listOLists = new ArrayList<ArrayList<String>>();
-        ArrayList<String> singleList = new ArrayList<String>();
-        singleList.add("-99.943118");
-        singleList.add("32.664761");
-        listOLists.add(singleList);
-        
-        ArrayList<String> singleList2 = new ArrayList<String>();
-        
-        singleList2.add("-99.518098");
-        singleList2.add("32.750025");
-        listOLists.add(singleList2);
-        
-        ArrayList<String> singleList3 = new ArrayList<String>();
-        
-        singleList3.add("-97.366715");
-        singleList3.add("32.874170");
-        listOLists.add(singleList3);
-        
-        ArrayList<String> singleList4 = new ArrayList<String>();
-       
-        singleList4.add("-96.730170");
-         singleList4.add("32.811848");
-        listOLists.add(singleList4);
-        
-        for(int i = 0; i< listOLists.size(); i++)
+    <%
+       for(int i = 0; i< display.size(); i++)
         {
     %>
-                
+
      {
       "type": "Feature",
       "geometry": {
         "type": "Point",
         "coordinates": [
-    <% out.print(listOLists.get(i).get(0)); %>,
-    <% out.print(listOLists.get(i).get(1)); %>        ]}
+     <% out.print(display.get(i).getLongitude()); %>,
+    <% out.print(display.get(i).getLatitude()); %>        ]}
       },
       <%  }%>
   ]
 };
-
-
-
     map.on('load', function (e) {
       /* Add the data to your map as a layer */
       map.addLayer({
@@ -203,17 +188,14 @@
         'icon-image': 'hospital-15'
         }
         });
- 
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.on('click', 'locations', function(e) {
     map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 15 });
     });
-
     // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
     map.on('mouseenter', 'locations', function() {
     map.getCanvas().style.cursor = 'pointer';
     });
-
     // Change it back to a pointer when it leaves.
     map.on('mouseleave', 'locations', function() {
     map.getCanvas().style.cursor = '';
