@@ -38,16 +38,13 @@ public class Database {
     public List<Procedure> dbQuery(String query) {
         List<Procedure> result = new ArrayList<Procedure>();
         Connection connect = dbConnect();
-                    
+        
         try {
             Statement stmt = connect.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             
-
             while (rs.next())
             {
-                            
-                
                 String name = rs.getString("Provider_Name");
                 int id = rs.getInt("Provider_Id");
                 String DRG = rs.getString("DRG_Definition");
@@ -62,8 +59,7 @@ public class Database {
                 
                 Procedure proc1 = new Procedure(DRG,id, name, street, city, state, zipCode, HRR, charges, longitude, latitude );
 
-
-                result.add(proc1);
+                result.add(proc);
             }
             rs.close();
             stmt.close();
