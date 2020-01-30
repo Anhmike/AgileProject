@@ -29,5 +29,9 @@ public class sql {
         return "SELECT * FROM lol.operations where Provider_Id = "+code;
     }
     
+    public static String selectLocation(){
+        return "SELECT * FROM lol.locations";
+    }
+    
     
 }
