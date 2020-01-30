@@ -1,4 +1,5 @@
 
+<%@page import="TreatmentFinder.sql"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="TreatmentFinder.Database"%>
 
@@ -25,15 +26,17 @@
       <th scope="col">#</th>
       <th scope="col">First</th>
       <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Handle</th  
     </tr>
   </thead>
   <tbody>
-
-        <% 
-            String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
+        
+        <%  
+            String search = request.getParameter("desc");
+            String budget = request.getParameter("budget");
+            out.print("<td>" + search+budget + "</td>");
             Database test = new Database();
-            List<Procedure> result = test.dbQuery(search);
+            List<Procedure> result = test.dbQuery(sql.selectInIndex(search, budget));
                         for(Procedure obj : result)
             {
                 out.print("<tr>");
