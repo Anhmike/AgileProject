@@ -21,7 +21,7 @@
  </nav>
 
     <main role="main">
-      <div id="header" class="container mt-5">
+      <div id="header" class="container">
         <br>
         <h1>Let's find you some affordable</h1>
         <h1>health care!</h1>
@@ -59,7 +59,9 @@
           <!--Start of row 2-->
           <div class="row">
             <div class="col">
-                <input name="location" type="text" class="form-control form-control-lg"  placeholder="Where are you from?">
+                <input id="browser-location-lat" name="browser-location-lat" type="hidden">
+                <input id="browser-location-lon" name="browser-location-lon" type="hidden">
+                <input id="location-input" name="location" type="text" class="form-control form-control-lg"  placeholder="Where are you from?">
             </div>
             <div class="col">
               <select name="max-distance" class="form-control form-control-lg" id="exampleFormControlSelect1">
@@ -98,5 +100,24 @@
 
     </div>
     </footer>
+      <script>
+    var bLocationLat = document.getElementById("browser-location-lat");
+    var bLocationLon = document.getElementById("browser-location-lon");
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        document.getELementById("location-input").value = "New York";
+      }
+    }
+
+    function showPosition(position) {
+      bLocationLat.value = position.coords.latitude;
+      bLocationLon.value = position.coords.longitude;
+    }
+    
+    getLocation();
+   
+    </script>
   </body>
 </html>
