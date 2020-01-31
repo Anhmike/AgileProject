@@ -21,3 +21,4 @@ https://www.youtube.com/playlist?list=PLPaBbkmGkLJ-n8awOmfog3OxxdcUiioGA
 
 ## Link to live website
 http://51.137.144.220:8080/
+(Please note that the browser geolocation feature does not work on live website as Website does not use https)
