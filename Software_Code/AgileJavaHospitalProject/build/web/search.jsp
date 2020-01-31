@@ -1,16 +1,8 @@
 
-<%@page import="TreatmentFinder.LocationManager"%>
+<%@page import="TreatmentFinder.*"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="TreatmentFinder.Helper"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="org.json.JSONArray"%>
-<%@page import="org.json.JSONObject"%>
-<
+<%@page import="org.json.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="TreatmentFinder.Database"%>
-
-<%@page import="TreatmentFinder.Procedure"%>
-<%@page import="TreatmentFinder.sql"%>
 
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
@@ -18,7 +10,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="style.css">
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"  crossorigin="anonymous">
          <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
@@ -29,7 +20,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <title>Search Results</title>
-    </head>
+        </head>
     <body>
         <h1>Search Results</h1>
 
