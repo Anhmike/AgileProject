@@ -1,21 +1,8 @@
 
+<%@page import="TreatmentFinder.*"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="java.util.Comparator"%>
-<%@page import="java.util.Collections"%>
-<%@page import="TreatmentFinder.Helper"%>
-<%@page import="java.util.ArrayList"%>
-<%@page import="org.json.JSONArray"%>
-<%@page import="java.util.Scanner"%>
-<%@page import="org.json.JSONObject"%>
-<%@page import="java.io.InputStream"%>
-<%@page import="java.net.URLEncoder"%>
-<%@page import="java.net.URLConnection"%>
-<%@page import="java.net.URL"%>
+<%@page import="org.json.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="TreatmentFinder.Database"%>
-
-<%@page import="TreatmentFinder.Procedure"%>
-<%@page import="TreatmentFinder.sql"%>
 
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
@@ -23,7 +10,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="style.css">
          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"  crossorigin="anonymous">
          <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
@@ -34,7 +20,7 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <title>Search Results</title>
-    </head>
+        </head>
     <body>
         <h1>Search Results</h1>
 
@@ -74,22 +60,11 @@
            
             //List<Procedure> result = test.dbQuery("SELECT * FROM lol.operations where DRG_Definition LIKE '%"+search+"%'");
             List<Procedure> display = new ArrayList();
-
+            LocationManager lm = new LocationManager();
             String loc = request.getParameter("location");
             String inputLocation = "";
             if( loc != null && !loc.isEmpty()) {
-                 inputLocation = request.getParameter("location");
-                URLConnection connection = new URL("https://api.mapbox.com/geocoding/v5/mapbox.places/" + URLEncoder.encode(inputLocation, "UTF-8") + ".json?access_token=pk.eyJ1IjoidGVhbTE1YWdpbGUiLCJhIjoiY2s1djVyOTJnMDh2czNsbGIxaG05NnI5bSJ9.xY_RVRU92qjmMJ0QCkrodw").openConnection();
-                connection.setRequestProperty("Accept-Charset", "UTF-8");
-                InputStream resp = connection.getInputStream();
-                    Scanner sc = new Scanner(resp);
-                //Reading line by line from scanner to StringBuffer
-                StringBuffer sb = new StringBuffer();
-                while(sc.hasNext()){
-                   sb.append(sc.nextLine());
-                }
-                JSONObject jsonObject = new JSONObject(sb.toString());
-                coordinates = jsonObject.getJSONArray("features").getJSONObject(0).getJSONObject("geometry").getJSONArray("coordinates");
+                 coordinates = lm.getUserCoordinates(loc);
             }
             else {
                 double lat = Double.parseDouble(request.getParameter("browser-location-lat"));
@@ -98,30 +73,7 @@
                 double[] coArr = {lon, lat};
                 coordinates = new JSONArray(coArr);
             }
-                for(Procedure obj : result)
-                {
-                    if(maxDistance == 0)
-                    {
-                        maxDistance = 100;
-                    }
-                    ArrayList temp = new ArrayList();
-                    temp.add(obj.getProviderId());
-                    double miles = Helper.distance(coordinates.getDouble(1), obj.getLatitude(), coordinates.getDouble(0), obj.getLongitude(), 0.0, 0.0) / 1609;
-                    temp.add(String.valueOf(miles));
-                    if(miles < maxDistance)
-                    {
-                        obj.setDistance(miles);
-                        display.add(obj);
-                    }
-                }
-            
-            Collections.sort(display, new Comparator<Procedure>() {
-            @Override
-            public int compare(Procedure u1, Procedure u2) {
-                Double num = u1.getDistance();
-              return num.compareTo(u2.getDistance());
-            }
-          });
+                display = lm.findProvidersInRange(result, maxDistance, coordinates);
              //Now sorts by distance/ shows distance, but kind of ugly should refactor
              for(Procedure obj : display)
             {
