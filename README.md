@@ -8,7 +8,7 @@ Group Members:
 * Caoilainn McCrory (170001498)
 * Melvin Abraham (170013110)
 * Feng Qu (2393454)
-* Daniel Sewerynski ()
+* Daniel Sewerynski (1700011297)
 * Naqash Nadeem (160010238)
 
 ## Project
