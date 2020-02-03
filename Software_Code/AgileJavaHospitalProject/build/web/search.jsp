@@ -127,6 +127,12 @@
   ]
 };
     map.on('load', function (e) {
+    map.loadImage(
+    'img/marker.png',
+    function(error, image) {
+    if (error) throw error;
+    map.addImage('marker', image);
+    });
       /* Add the data to your map as a layer */
       map.addLayer({
         "id": "locations",
@@ -137,7 +143,8 @@
           "data": locations
         },
         'layout': {
-        'icon-image': 'hospital-15'
+        'icon-image': 'marker',
+        'icon-size': 0.05
         }
         });
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
