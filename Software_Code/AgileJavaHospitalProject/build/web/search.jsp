@@ -22,31 +22,31 @@
         <title>Search Results</title>
         </head>
     <body>
-        <h1>Search Results</h1>
-
+        <main role="main">
         <div class="container-fluid">
-            <div class="row">
-            <div class="col-lg-7">
-        <table id="myTable" class="table table-sm table-striped">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Procedure</th>
-      <th scope="col">Provider Name</th>
-      <th scope="col">Address</th>
-      <th scope="col">Zip code</th>
-      <th scope="col">Average Cost</th>
-      <th scope="col">Distance</th>
-    </tr>
-  </thead>
-  <tbody>
+        <h1>Search Results</h1>
+        <div class="row">
+        <div class="col-lg-4">
+         <h5>You have searched for: 535 - FRACTURES OF HIP & PELVIS W MCC</h5>
+        <!--Start of map code-->
+         <table id="myTable" class="table table-sm table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Procedure</th>
+            <th scope="col">Provider Name</th>
+            <th scope="col">Average Cost</th>
+            <th scope="col">Distance</th>
+          </tr>
+        </thead>
+        <tbody>
+
 
         <%
-
-
-	    
             String sort = request.getParameter("budget");
             String price = request.getParameter("price");
             String search = request.getParameter("desc");
+            String searchBy = request.getParameter("searchBy");
+            
             JSONArray coordinates = null;
             //String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
 	    
@@ -55,14 +55,20 @@
             Database test = new Database();
             
             List<Procedure> result = null;
-
-            result = test.dbQuery("call lol.sortLowToHigh(\"" +search+"\","+ price + ")");
+            
+            if(searchBy.equals("code")) {
+                result = test.dbQuery("call lol.searchByCode(\"" + search +"\","+ price + ")");
+            }
+            else {
+                result = test.dbQuery("call lol.searchByDesc(\"" + search +"\","+ price + ")");
+            }
            
             //List<Procedure> result = test.dbQuery("SELECT * FROM lol.operations where DRG_Definition LIKE '%"+search+"%'");
             List<Procedure> display = new ArrayList();
             LocationManager lm = new LocationManager();
             String loc = request.getParameter("location");
             String inputLocation = "";
+            
             if( loc != null && !loc.isEmpty()) {
                  coordinates = lm.getUserCoordinates(loc);
             }
@@ -80,8 +86,7 @@
                 out.print("<tr>");
                 out.print("<td>" + obj.getDRG() + "</td>");
                 out.print("<td>" + obj.getProviderName() + "</td>");
-                out.print("<td>" + obj.getProviderStreetAddress() + ", " + obj.getProviderCity() + ", " + obj.getProviderState() + "</td>");
-                out.print("<td>" + obj.getProviderZipCode() + "</td>");
+
                 out.print("<td>" + "$" + obj.getTotalPayments() + "</td>");
                 out.print("<td>" + Math.round(obj.getDistance()) + " miles" + "</td>");
                 out.print("</tr>");
@@ -89,12 +94,16 @@
         %>
         </tbody>
       </table>
-            </div>
-        <div class="col-lg-4">
-             <div id="map">
         </div>
-            </div>
+        <!--End of table code-->
+        <!--Start of map code-->
+        <div class="col-lg-8">
+        <div id="map">
+        </div>
+        </div>
        </div>
+        </div>
+    </main>
     </body>
     <script>
         $(document).ready( function () {
@@ -105,7 +114,7 @@
                   container: 'map',
                   style: 'mapbox://styles/mapbox/light-v10',
                   center: {lng: <% out.print(coordinates.get(0));%>, lat: <% out.print(coordinates.get(1));%>},
-                  zoom: 12
+                  zoom: 9
                 });
         var locations = {
   "type": "FeatureCollection",
@@ -154,4 +163,5 @@
     });
         });
         </script>
+    
 </html>
