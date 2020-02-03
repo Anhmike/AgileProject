@@ -41,12 +41,11 @@
   <tbody>
 
         <%
-
-
-	    
             String sort = request.getParameter("budget");
             String price = request.getParameter("price");
             String search = request.getParameter("desc");
+            String searchBy = request.getParameter("searchBy");
+            
             JSONArray coordinates = null;
             //String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
 	    
@@ -55,14 +54,20 @@
             Database test = new Database();
             
             List<Procedure> result = null;
-
-            result = test.dbQuery("call lol.sortLowToHigh(\"" +search+"\","+ price + ")");
+            
+            if(searchBy.equals("code")) {
+                result = test.dbQuery("call lol.searchByCode(\"" + search +"\","+ price + ")");
+            }
+            else {
+                result = test.dbQuery("call lol.searchByDesc(\"" + search +"\","+ price + ")");
+            }
            
             //List<Procedure> result = test.dbQuery("SELECT * FROM lol.operations where DRG_Definition LIKE '%"+search+"%'");
             List<Procedure> display = new ArrayList();
             LocationManager lm = new LocationManager();
             String loc = request.getParameter("location");
             String inputLocation = "";
+            
             if( loc != null && !loc.isEmpty()) {
                  coordinates = lm.getUserCoordinates(loc);
             }
