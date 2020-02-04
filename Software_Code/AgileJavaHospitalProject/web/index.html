@@ -145,7 +145,7 @@
             }
         }
         else {
-            if($.inArray($("#desc").val(), listOfCodes) === -1) {
+            if($.inArray($("#desc").val().replace(/^0+/, ''), listOfCodes) === -1) {
                 e.preventDefault();
             }
         }
