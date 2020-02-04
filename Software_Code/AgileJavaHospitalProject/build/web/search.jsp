@@ -23,32 +23,13 @@
         </head>
     <body>
         <main role="main">
+        
         <div class="container-fluid">
+
         <h1>Search Results</h1>
-
-        <div id="exampleModalCenter" class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 id="modalProvName" class="modal-title"></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p id="modalAddress"></p>
-              <p id="modalZipCode"></p>
-            </div>
-            <div class="modal-footer">
-              <button id="modalClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
         <div class="row">
         <div class="col-lg-4">
-         <h5>You have searched for: <%= request.getParameter("desc") %> </h5>
+         <h5>You have searched for: 535 - FRACTURES OF HIP & PELVIS W MCC</h5>
         <!--Start of map code-->
          <table id="myTable" class="table table-sm table-striped">
         <thead class="thead-dark">
@@ -61,14 +42,10 @@
         </thead>
         <tbody>
 
-
-
         <%
             String sort = request.getParameter("budget");
             String price = request.getParameter("price");
             String search = request.getParameter("desc");
-            String searchBy = request.getParameter("searchBy");
-            
             JSONArray coordinates = null;
             //String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
 	    
@@ -77,20 +54,14 @@
             Database test = new Database();
             
             List<Procedure> result = null;
-            
-            if(searchBy.equals("code")) {
-                result = test.dbQuery("call lol.searchByCode(\"" + search +"\","+ price + ")");
-            }
-            else {
-                result = test.dbQuery("call lol.searchByDesc(\"" + search +"\","+ price + ")");
-            }
+
+            result = test.dbQuery("call lol.sortLowToHigh(\"" +search+"\","+ price + ")");
            
             //List<Procedure> result = test.dbQuery("SELECT * FROM lol.operations where DRG_Definition LIKE '%"+search+"%'");
             List<Procedure> display = new ArrayList();
             LocationManager lm = new LocationManager();
             String loc = request.getParameter("location");
             String inputLocation = "";
-            
             if( loc != null && !loc.isEmpty()) {
                  coordinates = lm.getUserCoordinates(loc);
             }
@@ -128,21 +99,8 @@
     </main>
     </body>
     <script>
-        var table;
-        var displayList = [
-        <%
-       for(int i = 0; i< display.size(); i++)
-        {
-        %>
-        {
-        name: <% out.print("\"" + display.get(i).getProviderName() + "\"");%>,
-        address: <% out.print("\"" + display.get(i).getProviderStreetAddress() + ", " + display.get(i).getProviderCity() + ", " + display.get(i).getProviderState() + "\"");%>,
-        zipcode: <% out.print("\"" + display.get(i).getProviderZipCode() + "\"");%>,
-        },
-        <%  }%>
-    ]
         $(document).ready( function () {
-            table = $('#myTable').DataTable();
+            $('#myTable').DataTable();
         } );
         mapboxgl.accessToken = 'pk.eyJ1IjoidGVhbTE1YWdpbGUiLCJhIjoiY2s1djVyOTJnMDh2czNsbGIxaG05NnI5bSJ9.xY_RVRU92qjmMJ0QCkrodw';
         var map = new mapboxgl.Map({
@@ -165,24 +123,12 @@
         "type": "Point",
         "coordinates": [
      <% out.print(display.get(i).getLongitude()); %>,
-    <% out.print(display.get(i).getLatitude()); %>        ],
-      
-        
-        },
-        "properties": {
-    "index" : <% out.print(i); %>
-    }
-    },
+    <% out.print(display.get(i).getLatitude()); %>        ]}
+      },
       <%  }%>
   ]
 };
     map.on('load', function (e) {
-    map.loadImage(
-    'img/marker.png',
-    function(error, image) {
-    if (error) throw error;
-    map.addImage('marker', image);
-    });
       /* Add the data to your map as a layer */
       map.addLayer({
         "id": "locations",
@@ -193,22 +139,12 @@
           "data": locations
         },
         'layout': {
-        'icon-image': 'marker',
-        'icon-size': 0.05
+        'icon-image': 'hospital-15'
         }
         });
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.on('click', 'locations', function(e) {
     map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 15 });
-    $("#exampleModalCenter").modal();
-    var index = e.features[0].properties.index;
-
-    $("#modalProvName").text(displayList[index].name);
-    $("#modalAddress").text(displayList[index].address);
-    $("#modalZipCode").text(displayList[index].zipcode);
-    table.search(displayList[index].name).draw();
-    
-
     });
     // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
     map.on('mouseenter', 'locations', function() {
@@ -219,10 +155,6 @@
     map.getCanvas().style.cursor = '';
     });
         });
-        
-
-        
-        
         </script>
     
 </html>
