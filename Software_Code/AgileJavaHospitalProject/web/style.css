@@ -12,7 +12,6 @@ table {
     word-wrap: break-word;
 }
 
-
 a.navhead
 {
     position: relative;
@@ -33,6 +32,10 @@ a.navhead:before {
 a.navhead:hover:before {
   visibility: visible;
   width: 100%;
+}
+
+#desc:focus {
+    background:transparent;
 }
 
 .accent{
@@ -69,9 +72,6 @@ footer{
 footer.footer{
     position: fixed;
 }
-
-
-
 
 #map { 
     width:100%;
