@@ -48,7 +48,7 @@
 
         <div class="row">
         <div class="col-lg-4">
-         <h5>You have searched for: 535 - FRACTURES OF HIP & PELVIS W MCC</h5>
+         <h5>You have searched for: <%= request.getParameter("desc") %> </h5>
         <!--Start of map code-->
          <table id="myTable" class="table table-sm table-striped">
         <thead class="thead-dark">
