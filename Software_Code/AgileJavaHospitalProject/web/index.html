@@ -137,14 +137,18 @@
     getLocation();
     
     $("#form").on("submit", function(e){
-        // Stop form from submitting if the description/code isn't valid
-        if($(this).val() == "desc" && $.inArray($("#desc").val(), listOfProcedures) == -1) {
-            e.preventDefault();
-        }
-        else if($.inArray($("#desc").val(), listOfCodes) == -1) {
-            e.preventDefault();
-        }
+        var select = $("#searchBy").val();
         
+        if(select === "desc") {
+            if($.inArray($("#desc").val(), listOfProcedures) === -1) {
+                e.preventDefault();
+            }
+        }
+        else {
+            if($.inArray($("#desc").val(), listOfCodes) === -1) {
+                e.preventDefault();
+            }
+        }
     })
     
     var listOfCodes = [
