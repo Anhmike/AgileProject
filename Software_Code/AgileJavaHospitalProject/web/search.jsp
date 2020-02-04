@@ -41,8 +41,6 @@
         </thead>
         <tbody>
 
-
-
         <%
             String sort = request.getParameter("budget");
             String price = request.getParameter("price");
@@ -204,7 +202,7 @@
   var popup = new mapboxgl.Popup({ closeOnClick: false })
     .setLngLat(currentFeature.geometry.coordinates)
     .setHTML('<div class="popup-header"><h3>' + (displayList[currentFeature.properties.index].name).toProperCase() + '</h3></div>' +
-      '<h4>' + displayList[currentFeature.properties.index].address.toProperCase() + ", " + displayList[currentFeature.properties.index].state + '</h4>' + '<h5>' + displayList[currentFeature.properties.index].zipcode + '</h5>')
+      '<p>' + displayList[currentFeature.properties.index].address.toProperCase() + ", " + displayList[currentFeature.properties.index].state + '</p>' + '<p>' + displayList[currentFeature.properties.index].zipcode + '</p>')
     .addTo(map);
 }
         
