@@ -49,7 +49,8 @@
         <div class="row">
         <div class="col-lg-4">
          <h5>You have searched for: <%= request.getParameter("desc") %> </h5>
-        <!--Start of map code-->
+         
+        <!--Start of table code-->
          <table id="myTable" class="table table-sm table-striped">
         <thead class="thead-dark">
           <tr>
@@ -61,17 +62,13 @@
         </thead>
         <tbody>
 
-
-
         <%
             String sort = request.getParameter("budget");
             String price = request.getParameter("price");
             String search = request.getParameter("desc");
             String searchBy = request.getParameter("searchBy");
             
-            JSONArray coordinates = null;
-            //String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
-	    
+            JSONArray coordinates = null;   
 
             int maxDistance = Integer.parseInt(request.getParameter("max-distance"));
             Database test = new Database();
@@ -84,8 +81,7 @@
             else {
                 result = test.dbQuery("call lol.searchByDesc(\"" + search +"\","+ price + ")");
             }
-           
-            //List<Procedure> result = test.dbQuery("SELECT * FROM lol.operations where DRG_Definition LIKE '%"+search+"%'");
+  
             List<Procedure> display = new ArrayList();
             LocationManager lm = new LocationManager();
             String loc = request.getParameter("location");
@@ -103,14 +99,14 @@
             }
                 display = lm.findProvidersInRange(result, maxDistance, coordinates);
              //Now sorts by distance/ shows distance, but kind of ugly should refactor
-             for(Procedure obj : display)
+             for(int i=0; i<display.size(); i++)
             {
                 out.print("<tr>");
-                out.print("<td>" + obj.getDRG() + "</td>");
-                out.print("<td>" + obj.getProviderName() + "</td>");
-
-                out.print("<td>" + "$" + obj.getTotalPayments() + "</td>");
-                out.print("<td>" + Math.round(obj.getDistance()) + " miles" + "</td>");
+                out.print("<td>" + display.get(i).getDRG() + "</td>");
+                out.print("<td><button type='submit' id=\"" + i + "\"" + "onclick='displayHospital(this.id)' class='findOnMap'>" + display.get(i).getProviderName() + "</button></td>");
+                out.print("<td>" + "$" + display.get(i).getTotalPayments() + "</td>");
+                out.print("<td>" + Math.round(display.get(i).getDistance()) + " miles" + "</td>");
+                
                 out.print("</tr>");
             }
         %>
@@ -118,12 +114,12 @@
       </table>
         </div>
         <!--End of table code-->
+        
         <!--Start of map code-->
         <div class="col-lg-8">
-        <div id="map">
+            <div id="map"></div>
         </div>
         </div>
-       </div>
         </div>
     </main>
     </body>
@@ -197,32 +193,32 @@
         'icon-size': 0.05
         }
         });
-// Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
+        
+    // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.on('click', 'locations', function(e) {
-    map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 15 });
-    $("#exampleModalCenter").modal();
-    var index = e.features[0].properties.index;
+        map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 15 });
+        $("#exampleModalCenter").modal();
+        var index = e.features[0].properties.index;
 
-    $("#modalProvName").text(displayList[index].name);
-    $("#modalAddress").text(displayList[index].address);
-    $("#modalZipCode").text(displayList[index].zipcode);
-    table.search(displayList[index].name).draw();
-    
+        $("#modalProvName").text(displayList[index].name);
+        $("#modalAddress").text(displayList[index].address);
+        $("#modalZipCode").text(displayList[index].zipcode);
+        table.search(displayList[index].name).draw();
 
-    });
-    // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
-    map.on('mouseenter', 'locations', function() {
-    map.getCanvas().style.cursor = 'pointer';
-    });
-    // Change it back to a pointer when it leaves.
-    map.on('mouseleave', 'locations', function() {
-    map.getCanvas().style.cursor = '';
-    });
+
         });
-        
-
-        
-        
-        </script>
-    
+        // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+        map.on('mouseenter', 'locations', function() {
+        map.getCanvas().style.cursor = 'pointer';
+        });
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'locations', function() {
+        map.getCanvas().style.cursor = '';
+        });  
+   });
+   
+   function displayHospital(id) {
+        map.flyTo({ center: locations.features[id].geometry.coordinates, zoom: 15 });
+    } 
+  </script>  
 </html>
