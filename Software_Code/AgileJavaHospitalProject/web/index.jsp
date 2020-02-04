@@ -8,11 +8,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/51b16e748f.js" crossorigin="anonymous"></script>
+
     <title>Treatment Finder</title>
     <script>
-        function updateTextInput(val) {
-          document.getElementById('textInput').value=val;
-        }
+
+        
+
     </script>
     <%
         String search = request.getParameter("desc");
@@ -103,8 +104,14 @@
           <!--Start of row 3-->
           <div class="slidecontainer col-13">
                     <label>Maximum Price</label>
-                    <input type="range" class="custom-range" name="rangeInput" min="1" max="600000" onchange="updateTextInput(this.value);">
-                    <label>$<input type="text" name="price" value="<% out.print(price); %>" id="textInput" value="300000" style="border: none;"></label>
+                    <input type="range" class="custom-range" id="range" min="0" max="600000" step="500" oninput="change()" onchange="change()" >
+                    <label>$<input type="text" name="price" id="price" value="<% out.print(price); %>" style="border:none;"></label>
+                    <script type='text/javascript'>
+			function change() {
+  				var value = document.getElementById('range').value ;
+  				document.getElementById('price').value = value;
+			}
+                    </script>
           </div>
         </div>
           
