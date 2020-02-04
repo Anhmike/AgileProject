@@ -19,17 +19,42 @@
         <script src='//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/51b16e748f.js" crossorigin="anonymous"></script>
         <title>Search Results</title>
         </head>
     <body>
-        <main role="main">
         
+        
+        <main role="main">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navhead navbar-brand" href="index.html"><h4><i class="fas fa-chevron-left accent"></i>  Treatment <span class="accent">Finder</span></h4></a>
+        </nav>
         <div class="container-fluid">
-
         <h1>Search Results</h1>
+
+        <div id="exampleModalCenter" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 id="modalProvName" class="modal-title"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="modalAddress"></p>
+              <p id="modalZipCode"></p>
+            </div>
+            <div class="modal-footer">
+              <button id="modalClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
         <div class="row">
         <div class="col-lg-4">
-         <h5>You have searched for: 535 - FRACTURES OF HIP & PELVIS W MCC</h5>
+         <h5>You have searched for: <%= request.getParameter("desc") %> </h5>
         <!--Start of map code-->
          <table id="myTable" class="table table-sm table-striped">
         <thead class="thead-dark">
@@ -42,10 +67,14 @@
         </thead>
         <tbody>
 
+
+
         <%
             String sort = request.getParameter("budget");
             String price = request.getParameter("price");
             String search = request.getParameter("desc");
+            String searchBy = request.getParameter("searchBy");
+            
             JSONArray coordinates = null;
             //String search = "call lol.findCode(\"" + request.getParameter("desc") + "\")";
 	    
@@ -54,14 +83,20 @@
             Database test = new Database();
             
             List<Procedure> result = null;
-
-            result = test.dbQuery("call lol.sortLowToHigh(\"" +search+"\","+ price + ")");
+            
+            if(searchBy.equals("code")) {
+                result = test.dbQuery("call lol.searchByCode(\"" + search +"\","+ price + ")");
+            }
+            else {
+                result = test.dbQuery("call lol.searchByDesc(\"" + search +"\","+ price + ")");
+            }
            
             //List<Procedure> result = test.dbQuery("SELECT * FROM lol.operations where DRG_Definition LIKE '%"+search+"%'");
             List<Procedure> display = new ArrayList();
             LocationManager lm = new LocationManager();
             String loc = request.getParameter("location");
             String inputLocation = "";
+            
             if( loc != null && !loc.isEmpty()) {
                  coordinates = lm.getUserCoordinates(loc);
             }
@@ -97,10 +132,34 @@
        </div>
         </div>
     </main>
+        <br>
+    <footer class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+              <h6>© Team 15 2020</h6>
+              <div class="float-right">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i><i class="fab fa-facebook fa-2x fa-fw"></i><i class="fab fa-instagram fa-2x fa-fw"></i>
+              </div>
+            </div>
+        </div>
+    </footer>
     </body>
     <script>
+        var table;
+        var displayList = [
+        <%
+       for(int i = 0; i< display.size(); i++)
+        {
+        %>
+        {
+        name: <% out.print("\"" + display.get(i).getProviderName() + "\"");%>,
+        address: <% out.print("\"" + display.get(i).getProviderStreetAddress() + ", " + display.get(i).getProviderCity() + ", " + display.get(i).getProviderState() + "\"");%>,
+        zipcode: <% out.print("\"" + display.get(i).getProviderZipCode() + "\"");%>,
+        },
+        <%  }%>
+    ]
         $(document).ready( function () {
-            $('#myTable').DataTable();
+            table = $('#myTable').DataTable({"lengthMenu": [5, 10, 15, 20, 50]});
         } );
         mapboxgl.accessToken = 'pk.eyJ1IjoidGVhbTE1YWdpbGUiLCJhIjoiY2s1djVyOTJnMDh2czNsbGIxaG05NnI5bSJ9.xY_RVRU92qjmMJ0QCkrodw';
         var map = new mapboxgl.Map({
@@ -123,12 +182,24 @@
         "type": "Point",
         "coordinates": [
      <% out.print(display.get(i).getLongitude()); %>,
-    <% out.print(display.get(i).getLatitude()); %>        ]}
-      },
+    <% out.print(display.get(i).getLatitude()); %>        ],
+      
+        
+        },
+        "properties": {
+    "index" : <% out.print(i); %>
+    }
+    },
       <%  }%>
   ]
 };
     map.on('load', function (e) {
+    map.loadImage(
+    'img/marker.png',
+    function(error, image) {
+    if (error) throw error;
+    map.addImage('marker', image);
+    });
       /* Add the data to your map as a layer */
       map.addLayer({
         "id": "locations",
@@ -139,12 +210,22 @@
           "data": locations
         },
         'layout': {
-        'icon-image': 'hospital-15'
+        'icon-image': 'marker',
+        'icon-size': 0.05
         }
         });
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.on('click', 'locations', function(e) {
     map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 15 });
+    $("#exampleModalCenter").modal();
+    var index = e.features[0].properties.index;
+
+    $("#modalProvName").text(displayList[index].name);
+    $("#modalAddress").text(displayList[index].address);
+    $("#modalZipCode").text(displayList[index].zipcode);
+    table.search(displayList[index].name).draw();
+    
+
     });
     // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
     map.on('mouseenter', 'locations', function() {
@@ -155,6 +236,10 @@
     map.getCanvas().style.cursor = '';
     });
         });
+        
+
+        
+        
         </script>
     
 </html>
