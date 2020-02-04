@@ -19,10 +19,16 @@
         <script src='//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js'></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/51b16e748f.js" crossorigin="anonymous"></script>
         <title>Search Results</title>
         </head>
     <body>
+        
+        
         <main role="main">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navhead navbar-brand" href="index.html"><h4><i class="fas fa-chevron-left accent"></i>  Treatment <span class="accent">Finder</span></h4></a>
+        </nav>
         <div class="container-fluid">
         <h1>Search Results</h1>
 
@@ -126,6 +132,17 @@
        </div>
         </div>
     </main>
+        <br>
+    <footer class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+              <h6>© Team 15 2020</h6>
+              <div class="float-right">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i><i class="fab fa-facebook fa-2x fa-fw"></i><i class="fab fa-instagram fa-2x fa-fw"></i>
+              </div>
+            </div>
+        </div>
+    </footer>
     </body>
     <script>
         var table;
@@ -142,7 +159,7 @@
         <%  }%>
     ]
         $(document).ready( function () {
-            table = $('#myTable').DataTable();
+            table = $('#myTable').DataTable({"lengthMenu": [5, 10, 15, 20, 50]});
         } );
         mapboxgl.accessToken = 'pk.eyJ1IjoidGVhbTE1YWdpbGUiLCJhIjoiY2s1djVyOTJnMDh2czNsbGIxaG05NnI5bSJ9.xY_RVRU92qjmMJ0QCkrodw';
         var map = new mapboxgl.Map({
