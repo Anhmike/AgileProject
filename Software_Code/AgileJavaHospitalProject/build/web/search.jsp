@@ -36,26 +36,6 @@
         <div class="container-fluid">
         <h1>Search Results</h1>
 
-        <div id="exampleModalCenter" class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 id="modalProvName" class="modal-title"></h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p id="modalAddress"></p>
-              <p id="modalZipCode"></p>
-            </div>
-            <div class="modal-footer">
-              <button id="modalClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
         <div class="row">
         <div class="col-lg-4">
          <h5>You have searched for: <%= request.getParameter("desc") %> </h5>
@@ -153,7 +133,8 @@
         %>
         {
         name: <% out.print("\"" + display.get(i).getProviderName() + "\"");%>,
-        address: <% out.print("\"" + display.get(i).getProviderStreetAddress() + ", " + display.get(i).getProviderCity() + ", " + display.get(i).getProviderState() + "\"");%>,
+        address: <% out.print("\"" + display.get(i).getProviderStreetAddress() + ", " + display.get(i).getProviderCity() + "\"");%>,
+        state: <% out.print("\"" + display.get(i).getProviderState() + "\"");%>,
         zipcode: <% out.print("\"" + display.get(i).getProviderZipCode() + "\"");%>,
         },
         <%  }%>
@@ -217,29 +198,39 @@
         
     // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
     map.on('click', 'locations', function(e) {
-        map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 15 });
-        $("#exampleModalCenter").modal();
-        var index = e.features[0].properties.index;
-
-        $("#modalProvName").text(displayList[index].name);
-        $("#modalAddress").text(displayList[index].address);
-        $("#modalZipCode").text(displayList[index].zipcode);
-        table.search(displayList[index].name).draw();
-
-
+    map.flyTo({ center: e.features[0].geometry.coordinates, zoom: 15 });
+    $("#exampleModalCenter").modal();
+    var index = e.features[0].properties.index;
+    createPopUp(e.features[0]);
+    table.search(displayList[index].name).draw();
+    });
+    // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
+    map.on('mouseenter', 'locations', function() {
+    map.getCanvas().style.cursor = 'pointer';
+    });
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'locations', function() {
+    map.getCanvas().style.cursor = '';
+    });
         });
-        // Change the cursor to a pointer when the it enters a feature in the 'symbols' layer.
-        map.on('mouseenter', 'locations', function() {
-        map.getCanvas().style.cursor = 'pointer';
-        });
-        // Change it back to a pointer when it leaves.
-        map.on('mouseleave', 'locations', function() {
-        map.getCanvas().style.cursor = '';
-        });  
-   });
-   
-   function displayHospital(id) {
-        map.flyTo({ center: locations.features[id].geometry.coordinates, zoom: 15 });
-    } 
-  </script>  
+        
+  function createPopUp(currentFeature) {
+  var popUps = document.getElementsByClassName('mapboxgl-popup');
+  /** Check if there is already a popup on the map and if so, remove it */
+  if (popUps[0]) popUps[0].remove();
+
+  var popup = new mapboxgl.Popup({ closeOnClick: false })
+    .setLngLat(currentFeature.geometry.coordinates)
+    .setHTML('<div class="popup-header"><h3>' + (displayList[currentFeature.properties.index].name).toProperCase() + '</h3></div>' +
+      '<p>' + displayList[currentFeature.properties.index].address.toProperCase() + ", " + displayList[currentFeature.properties.index].state + '</p>' + '<p>' + displayList[currentFeature.properties.index].zipcode + '</p>')
+    .addTo(map);
+}
+        
+        String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};
+        
+        
+        </script>
+    
 </html>
