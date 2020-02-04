@@ -12,6 +12,9 @@ table {
     word-wrap: break-word;
 }
 
+#desc:focus {
+    background:transparent;
+}
 .accent{
 color: #3E96E8;
 }
