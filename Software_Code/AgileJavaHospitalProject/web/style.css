@@ -4,12 +4,38 @@ html, body{
 h1{
   font-weight: bold;
   text-decoration: underline;
-   text-decoration-color: #3E96E8;
+  text-decoration-color: #3E96E8;
 }
 
 table {
     table-layout: fixed;
     word-wrap: break-word;
+}
+
+a.navhead
+{
+    position: relative;
+}
+
+a.navhead:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #3E96E8;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+a.navhead:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+#desc:focus {
+    background:transparent;
 }
 
 .accent{
@@ -35,18 +61,17 @@ color: #3E96E8;
   position: absolute;
   right: 150px;
 }
-/*
+
 footer{
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
-  
-  background-color: #3c3c3c;
-  color: #fff;
-  vertical-align: middle;
 }
-*/
+
+footer.footer{
+    position: fixed;
+}
 
 #map { 
     width:100%;
@@ -61,7 +86,6 @@ footer{
   border-radius: 50%;
   cursor: pointer;
 }
-
 .mapboxgl-popup { 
  font-size: 0.7em;
  width: 400px;
@@ -92,4 +116,13 @@ footer{
 
 .mapboxgl-popup-content-wrapper {
   padding: 0;
+}
+
+.findOnMap {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }
