@@ -61,3 +61,30 @@ footer{
   border-radius: 50%;
   cursor: pointer;
 }
+
+.mapboxgl-popup { 
+ font-size: 0.7em;
+ width: 400px;
+}
+
+/* Marker tweaks */
+.mapboxgl-popup-close-button {
+  display: block;
+}
+
+.mapboxgl-popup-content {
+  font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
+  padding: 0!important;
+  
+}
+.mapboxgl-popup-content h3, h4, h5{
+ padding: 2% 5%;
+}
+
+.popup-header{
+  background-color: #8fbaff;
+}
+
+.mapboxgl-popup-content-wrapper {
+  padding: 0;
+}
