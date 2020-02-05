@@ -51,25 +51,11 @@ public class DatabaseTest {
      */
     @Test
     public void testDbQuery() {
-        System.out.println("Testing the database query");
-        String query = "SELECT * FROM lol.operations";
-        //Setup test procedure
-        Procedure test= new Procedure("023 - CRANIOTOMY W MAJOR DEVICE IMPLANT OR ACUTE CNS PDX W MCC OR CHEMOTHE",
-                                     10001,
-                                     "SOUTHEAST ALABAMA MEDICAL CENTER",
-                                     "1108 ROSS CLARK CIRCLE",
-                                     "DOTHAN",
-                                     "AL",
-                                     36301,
-                                     "AL - Dothan",
-                                     25823.71429f);
+        Database db = new Database();
+        Connection con = db.dbConnect();
+        String query="call lol.searchByDesc('Heart Transplant', 500000)";
+        List<Procedure> result = db.dbQuery(query);
+        assertEquals(result.get(0).getProviderId(), 40114);
         
-        Database instance = new Database();
-         
-        List<Procedure> result = instance.dbQuery(query);
-        //assertEquals(test.equals(result.get(0)));/
-        assertEquals(test.getDRG(),result.get(0).getDRG());
-        // TODO review the generated test code and remove the default call to fail.
-
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="labpc044" name="TreatmentFinder.DatabaseTest" skipped="0" tests="2" time="4.066" timestamp="2020-01-28T16:54:16">
+<testsuite errors="0" failures="0" hostname="labpc043" name="TreatmentFinder.DatabaseTest" skipped="0" tests="2" time="1.514" timestamp="2020-02-05T16:10:22">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="GB" />
     <property name="nb.wait.for.caches" value="true" />
-    <property name="javac.test.classpath" value="lib\mysql-connector-java-8.0.19.jar:build/web/WEB-INF/classes:C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar:C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar" />
+    <property name="javac.test.classpath" value="lib\mysql-connector-java-8.0.19.jar:build/web/WEB-INF/classes:C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar:C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar" />
     <property name="libs.jsf20.maven-pom" value="" />
     <property name="j2ee.copy.static.files.on.save" value="true" />
     <property name="libs.DataBindingME.src" value="C:\Program Files\NetBeans 8.2\mobility\sources\netbeans_databindingme-src.zip" />
@@ -15,7 +15,7 @@
     <property name="ant.core.lib" value="C:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar" />
     <property name="javadoc.windowtitle" value="" />
     <property name="libs.jsp-compilation.javadoc" value="" />
-    <property name="user.dir" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject" />
+    <property name="user.dir" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject" />
     <property name="libs.javaee-api-7.0.src" value="" />
     <property name="java.vm.version" value="25.181-b13" />
     <property name="libs.DataBindingME.classpath" value="C:\Program Files\NetBeans 8.2\mobility\modules\ext\netbeans_databindingme.jar" />
@@ -42,7 +42,7 @@
     <property name="netbeans.autoupdate.variant" value="" />
     <property name="have.tests" value="true" />
     <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser" />
-    <property name="libs.hamcrest.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar" />
+    <property name="libs.hamcrest.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar" />
     <property name="j2ee.server.instance" value="tomcat80:home=C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27:base=apache-tomcat-8.0.27.0_base" />
     <property name="libs.javac-api.javadoc" value="" />
     <property name="os.name" value="Windows 10" />
@@ -69,16 +69,16 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner TreatmentFinder.DatabaseTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\build\test\results\TEST-TreatmentFinder.DatabaseTest.xml crashfile=C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\build\junitvmwatcher5076226748042970831.properties propsfile=C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\build\junit3648470558624096058.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner TreatmentFinder.DatabaseTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\build\test\results\TEST-TreatmentFinder.DatabaseTest.xml crashfile=C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\build\junitvmwatcher9143610434063111229.properties propsfile=C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\build\junit4072581046969112982.properties" />
     <property name="build.classes.dir" value="build/web/WEB-INF/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="ap.supported.internal" value="true" />
-    <property name="libs.javaee-endorsed-api-7.0.javadoc" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javaee-doc-api.jar" />
+    <property name="libs.javaee-endorsed-api-7.0.javadoc" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javaee-doc-api.jar" />
     <property name="libs.jaxws21.javadoc" value="C:\Program Files\NetBeans 8.2\java\docs\jaxws-api-doc.zip" />
     <property name="libs.spring-webmvc4.0.javadoc" value="" />
     <property name="build.web.excludes" value="**/*.java,**/*.form" />
     <property name="includes" value="**" />
-    <property name="browser.context" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject" />
+    <property name="browser.context" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject" />
     <property name="user.country" value="GB" />
     <property name="javadoc.encoding" value="UTF-8" />
     <property name="javac.classpath" value="lib\mysql-connector-java-8.0.19.jar" />
@@ -95,7 +95,7 @@
     <property name="java.endorsed.dirs" value="c:\jdk1.8.0_181\jre\lib\endorsed" />
     <property name="libs.Comet-GlassFish-v3.maven-pom" value="" />
     <property name="libs.groovy-all.src" value="" />
-    <property name="libs.junit_5.src" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-api-5.3.1-sources.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-params-5.3.1-sources.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-engine-5.3.1-sources.jar" />
+    <property name="libs.junit_5.src" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-api-5.3.1-sources.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-params-5.3.1-sources.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-engine-5.3.1-sources.jar" />
     <property name="netbeans.dynamic.classpath" value="C:\Program Files\NetBeans 8.2\platform\core\asm-all-5.0.1.jar;C:\Program Files\NetBeans 8.2\platform\core\core-base.jar;C:\Program Files\NetBeans 8.2\platform\core\core.jar;C:\Program Files\NetBeans 8.2\platform\core\org-netbeans-libs-asm.jar;C:\Program Files\NetBeans 8.2\platform\core\org-openide-filesystems-compat8.jar;C:\Program Files\NetBeans 8.2\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core-base_zh_CN.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\core_zh_CN.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-netbeans-libs-asm_zh_CN.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems-compat8_zh_CN.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ja.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_pt_BR.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_ru.jar;C:\Program Files\NetBeans 8.2\platform\core\locale\org-openide-filesystems_zh_CN.jar;C:\Program Files\NetBeans 8.2\nb\core\org-netbeans-upgrader.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_ja.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_pt_BR.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_ru.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\core_nb_zh_CN.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_ja.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_pt_BR.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_ru.jar;C:\Program Files\NetBeans 8.2\nb\core\locale\org-netbeans-upgrader_zh_CN.jar" />
     <property name="java.vm.specification.version" value="1.8" />
     <property name="libs.hibernate4-support.src" value="" />
@@ -114,7 +114,7 @@
     <property name="libs.Java-EE-GlassFish-v3-Prelude.maven-pom" value="" />
     <property name="libs.junit_4.maven-pom" value="" />
     <property name="resource.dir" value="setup" />
-    <property name="javac.test.processorpath" value="lib\mysql-connector-java-8.0.19.jar:build/web/WEB-INF/classes:C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar:C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar" />
+    <property name="javac.test.processorpath" value="lib\mysql-connector-java-8.0.19.jar:build/web/WEB-INF/classes:C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar:C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar" />
     <property name="netbeans.buildnumber" value="201609300101" />
     <property name="libs.JWSAntTasks.javadoc" value="" />
     <property name="build.generated.sources.dir" value="build/generated-sources" />
@@ -127,7 +127,7 @@
     <property name="libs.struts.classpath" value="C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\antlr-2.7.2.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\bsf-2.3.0.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\commons-beanutils-1.8.0.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\commons-chain-1.2.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\commons-digester-1.8.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\commons-fileupload-1.1.1.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\commons-io-1.1.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\commons-logging-1.0.4.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\commons-validator-1.3.1.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\jstl-1.0.2.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\oro-2.0.8.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\standard-1.0.6.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\struts-core-1.3.10.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\struts-el-1.3.10.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\struts-extras-1.3.10.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\struts-faces-1.3.10.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\struts-mailreader-dao-1.3.10.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\struts-scripting-1.3.10.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\struts-taglib-1.3.10.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\struts\struts-tiles-1.3.10.jar" />
     <property name="application.args.param" value="" />
     <property name="ant.home" value="C:\Program Files\NetBeans 8.2\extide\ant" />
-    <property name="libs.junit_4.src" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12-sources.jar" />
+    <property name="libs.junit_4.src" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12-sources.jar" />
     <property name="libs.testng.classpath" value="C:\Program Files\NetBeans 8.2\platform\modules\ext\testng-6.8.1-dist.jar" />
     <property name="conf.dir" value="src/conf" />
     <property name="webinf.dir" value="web/WEB-INF" />
@@ -141,7 +141,7 @@
     <property name="libs.spring-framework400.src" value="" />
     <property name="libs.PostgreSQLDriver.src" value="" />
     <property name="sun.arch.data.model" value="64" />
-    <property name="basedir" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject" />
+    <property name="basedir" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject" />
     <property name="libs.jpa20-persistence.maven-pom" value="" />
     <property name="jar.compress" value="false" />
     <property name="libs.javaee-web-api-7.0.classpath" value="C:\Program Files\NetBeans 8.2\enterprise\modules\ext\javaee-web-api-7.0.jar" />
@@ -165,7 +165,7 @@
     <property name="test.binaryincludes" value="&lt;nothing&gt;" />
     <property name="libs.primefaces.javadoc" value="" />
     <property name="libs.spring-framework300.maven-pom" value="" />
-    <property name="run.test.classpath" value="lib\mysql-connector-java-8.0.19.jar:build/web/WEB-INF/classes:C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar:C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar:build/test/classes" />
+    <property name="run.test.classpath" value="lib\mysql-connector-java-8.0.19.jar:build/web/WEB-INF/classes:C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar:C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar:build/test/classes" />
     <property name="ant.project.invoked-targets" value="test" />
     <property name="test.binaryexcludes" value="" />
     <property name="libs.swing-layout.javadoc" value="C:\Program Files\NetBeans 8.2\platform\docs\swing-layout-1.0.4-doc.zip" />
@@ -173,7 +173,7 @@
     <property name="libs.hibernate4-persistence.maven-pom" value="" />
     <property name="jspc.schemas" value="/resources/schemas/" />
     <property name="libs.DataBindingME-SVG.classpath" value="C:\Program Files\NetBeans 8.2\mobility\modules\ext\netbeans_databindingme_svg.jar" />
-    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|labpc044" />
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|labpc043" />
     <property name="libs.PostgreSQLDriver.maven-pom" value="" />
     <property name="java.class.version" value="52.0" />
     <property name="libs.JAVADB_DRIVER_LABEL.classpath" value="C:\Program Files\glassfish-4.1.1\javadb\lib\derby.jar;C:\Program Files\glassfish-4.1.1\javadb\lib\derbyclient.jar;C:\Program Files\glassfish-4.1.1\javadb\lib\derbynet.jar" />
@@ -191,7 +191,7 @@
     <property name="libs.spring-webmvc4.0.maven-pom" value="" />
     <property name="libs.spring-framework300.src" value="" />
     <property name="libs.jstl.src" value="" />
-    <property name="empty.dir" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\build\empty" />
+    <property name="empty.dir" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\build\empty" />
     <property name="display.browser" value="true" />
     <property name="test.binarytestincludes" value="" />
     <property name="libs.hibernate4-persistencemodelgen.src" value="" />
@@ -199,7 +199,7 @@
     <property name="libs.jpa20-persistence.javadoc" value="C:\Program Files\NetBeans 8.2\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="java.home" value="c:\jdk1.8.0_181\jre" />
     <property name="libs.jsp-compilation.src" value="" />
-    <property name="debug.test.classpath" value="lib\mysql-connector-java-8.0.19.jar:build/web/WEB-INF/classes:C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar:C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar:build/test/classes" />
+    <property name="debug.test.classpath" value="lib\mysql-connector-java-8.0.19.jar:build/web/WEB-INF/classes:C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar:C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/hamcrest/hamcrest-core-1.3.jar:build/test/classes" />
     <property name="libs.javaee-endorsed-api-6.0.classpath" value="C:\Program Files\NetBeans 8.2\enterprise\modules\ext\javaee6-endorsed\javax.annotation.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\javaee6-endorsed\jaxb-api-osgi.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\javaee6-endorsed\webservices-api-osgi.jar" />
     <property name="libs.javaee-api-6.0.src" value="" />
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
@@ -209,10 +209,10 @@
     <property name="libs.PostgreSQLDriver.javadoc" value="" />
     <property name="libs.restlib.classpath" value="C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\asm-all-repackaged-2.2.0-b21.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\cglib-2.2.0-b21.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\guava-14.0.1.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\hk2-api-2.2.0-b21.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\hk2-locator-2.2.0-b21.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\hk2-utils-2.2.0-b21.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\javax.annotation-api-1.2.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\javax.inject-2.2.0-b21.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\javax.servlet-api-3.0.1.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\jaxb-api-2.2.7.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\jersey-entity-filtering-2.5.1.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\jersey-media-moxy-2.5.1.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\org.osgi.core-4.2.0.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\osgi-resource-locator-1.0.1.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\persistence-api-1.0.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\ext\validation-api-1.1.0.Final.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\jersey-client.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\jersey-common.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\jersey-container-servlet.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\jersey-container-servlet-core.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jersey2\jersey-server.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\eclipselink.jar" />
     <property name="libs.MySQLDriver.maven-pom" value="" />
-    <property name="libraries.dir.nativedirsep" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib" />
+    <property name="libraries.dir.nativedirsep" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib" />
     <property name="libs.hibernate4-persistence.javadoc" value="C:\Program Files\NetBeans 8.2\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
-    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|labpc044" />
-    <property name="libs.junit_4.javadoc" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12-javadoc.jar" />
+    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|labpc043" />
+    <property name="libs.junit_4.javadoc" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12-javadoc.jar" />
     <property name="libs.EclipseLink-GlassFish-v3.maven-pom" value="" />
     <property name="libs.javaee-web-api-6.0.maven-pom" value="" />
     <property name="j2ee.deploy.on.save" value="true" />
@@ -236,9 +236,9 @@
     <property name="dist.ear.war" value="dist/AgileJavaHospitalProject.war" />
     <property name="javac.processorpath" value="lib\mysql-connector-java-8.0.19.jar" />
     <property name="libs.hamcrest.maven-pom" value="" />
-    <property name="libs.junit_5.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-api-5.3.1.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-params-5.3.1.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-engine-5.3.1.jar" />
+    <property name="libs.junit_5.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-api-5.3.1.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-params-5.3.1.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-engine-5.3.1.jar" />
     <property name="javac.compilerargs" value="" />
-    <property name="ant.file" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\build.xml" />
+    <property name="ant.file" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
     <property name="libs.hibernate4-support.javadoc" value="C:\Program Files\NetBeans 8.2\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="libs.jsf12.classpath" value="C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jsf-1_2\commons-beanutils.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jsf-1_2\commons-collections.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jsf-1_2\commons-digester.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jsf-1_2\commons-logging.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jsf-1_2\jsf-api.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jsf-1_2\jsf-impl.jar" />
@@ -257,7 +257,7 @@
     <property name="javadoc.additionalparam" value="" />
     <property name="java.io.tmpdir" value="C:\Users\MELVIN~1\AppData\Local\Temp\" />
     <property name="java.vendor.url" value="http://java.oracle.com/" />
-    <property name="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:&apos;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\javax.annotation-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\javax.xml.soap-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jaxb-api-osgi.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jaxws-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jsr181-api.jar&apos;" />
+    <property name="endorsed.classpath.cmd.line.arg" value="-Xbootclasspath/p:&apos;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\javax.annotation-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\javax.xml.soap-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jaxb-api-osgi.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jaxws-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jsr181-api.jar&apos;" />
     <property name="jna.loaded" value="true" />
     <property name="junit.available" value="true" />
     <property name="libraries.basename" value="nblibraries" />
@@ -275,11 +275,11 @@
     <property name="ap.processors.internal" value="" />
     <property name="javadoc.encoding.used" value="UTF-8" />
     <property name="libs.DataBindingME-SVG.src" value="C:\Program Files\NetBeans 8.2\mobility\sources\netbeans_databindingme_svg-src.zip" />
-    <property name="ant.file.AgileJavaHospitalProject-impl" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\nbproject\build-impl.xml" />
+    <property name="ant.file.AgileJavaHospitalProject-impl" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\nbproject\build-impl.xml" />
     <property name="libs.spring-framework400.maven-pom" value="" />
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="ant.project.name" value="AgileJavaHospitalProject" />
-    <property name="netbeans.hash.code" value="unique=NB_CND_EXTIDE_GFMOD_GROOVY_JAVA_JC_MOB_PHP_TOMCAT_WEBCOMMON_WEBEE08d73314f-76bc-4e0b-9d47-edc132d962f3_afd23147-691b-41ee-9c9a-6eb8f9ae71cd" />
+    <property name="netbeans.hash.code" value="unique=NB_CND_EXTIDE_GFMOD_GROOVY_JAVA_JC_MOB_PHP_TOMCAT_WEBCOMMON_WEBEE0e85a0ded-4cf8-47eb-9f8e-83cf3fc4b1f3_afd23147-691b-41ee-9c9a-6eb8f9ae71cd" />
     <property name="netbeans.default_userdir_root" value="C:\Users\melvinabraham\AppData\Roaming\NetBeans" />
     <property name="libs.jsp-compilation-syscp.maven-pom" value="" />
     <property name="junit.selected.version" value="4" />
@@ -296,12 +296,12 @@
     <property name="libs.javaee-api-6.0.maven-pom" value="" />
     <property name="libs.JWSAntTasks.src" value="" />
     <property name="libs.CopyLibs.maven-pom" value="" />
-    <property name="libs.absolutelayout.javadoc" value="" />
     <property name="libs.spring-framework300.javadoc" value="" />
+    <property name="libs.absolutelayout.javadoc" value="" />
     <property name="java.specification.name" value="Java Platform API Specification" />
     <property name="no.dist.ear.dir" value="true" />
     <property name="libs.CopyLibs.prop-version" value="2.0" />
-    <property name="libraries.dir" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib" />
+    <property name="libraries.dir" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib" />
     <property name="java.specification.vendor" value="Oracle Corporation" />
     <property name="libs.javac-api.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\nb-javac-api.jar" />
     <property name="java.version" value="1.8.0_181" />
@@ -313,7 +313,7 @@
     <property name="ap.cmd.line.internal" value="" />
     <property name="libs.eclipselinkmodelgen.maven-pom" value="" />
     <property name="libs.jsp-compilation-syscp.javadoc" value="" />
-    <property name="libs.javaee-endorsed-api-7.0.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javax.annotation-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javax.xml.soap-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jaxb-api-osgi.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jaxws-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jsr181-api.jar" />
+    <property name="libs.javaee-endorsed-api-7.0.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javax.annotation-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javax.xml.soap-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jaxb-api-osgi.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jaxws-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jsr181-api.jar" />
     <property name="libs.eclipselinkmodelgen.javadoc" value="" />
     <property name="libs.metro.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\metro-1.4-doc.zip" />
     <property name="libs.struts.maven-pom" value="" />
@@ -323,28 +323,28 @@
     <property name="jdk.launcher.addexports.5" value="java.management/sun.management=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.4" value="java.desktop/com.sun.java.swing.plaf.windows=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.3" value="java.desktop/sun.awt.im=ALL-UNNAMED" />
-    <property name="libs.javaee-endorsed-api-7.0.displayName" value="Java EE 7 Endorsed API Library" />
-    <property name="jdk.launcher.addexports.2" value="java.desktop/java.awt.peer=ALL-UNNAMED" />
     <property name="libs.jaxb.classpath" value="C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\jaxb-impl.jar;C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\jaxb1-impl.jar;C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\api\jsr173_1.0_api.jar" />
+    <property name="jdk.launcher.addexports.2" value="java.desktop/java.awt.peer=ALL-UNNAMED" />
+    <property name="libs.javaee-endorsed-api-7.0.displayName" value="Java EE 7 Endorsed API Library" />
     <property name="jdk.launcher.addexports.1" value="java.base/jdk.internal.jrtfs=ALL-UNNAMED" />
     <property name="jdk.launcher.addexports.0" value="java.desktop/sun.awt=ALL-UNNAMED" />
     <property name="dist.javadoc.dir" value="dist/javadoc" />
     <property name="libs.j2me_common_ant.classpath" value="C:\Program Files\NetBeans 8.2\mobility\modules\org-netbeans-modules-j2me-common-ant.jar;C:\Program Files\NetBeans 8.2\java\modules\org-netbeans-modules-classfile.jar" />
     <property name="libs.spring-webmvc3.0.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar" />
     <property name="libs.swing-layout.classpath" value="C:\Program Files\NetBeans 8.2\platform\modules\ext\swing-layout-1.0.4.jar" />
-    <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
     <property name="jspc.dtds" value="/resources/dtds/" />
+    <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
     <property name="libs.restlib.src" value="" />
     <property name="javac.source" value="1.8" />
     <property name="build.generated.dir" value="build/generated" />
     <property name="line.separator" value="&#xd;&#xa;" />
     <property name="ant.file.type.AgileJavaHospitalProject" value="file" />
     <property name="java.specification.version" value="1.8" />
-    <property name="java.vm.info" value="mixed mode" />
-    <property name="libraries.path" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\nblibraries.properties" />
+    <property name="libraries.path" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\nblibraries.properties" />
     <property name="libs.jaxws21.maven-pom" value="" />
+    <property name="java.vm.info" value="mixed mode" />
     <property name="nb.junit.batch" value="true" />
-    <property name="sun.boot.class.path" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\javax.annotation-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\javax.xml.soap-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jaxb-api-osgi.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jaxws-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jsr181-api.jar;c:\jdk1.8.0_181\jre\lib\resources.jar;c:\jdk1.8.0_181\jre\lib\rt.jar;c:\jdk1.8.0_181\jre\lib\sunrsasign.jar;c:\jdk1.8.0_181\jre\lib\jsse.jar;c:\jdk1.8.0_181\jre\lib\jce.jar;c:\jdk1.8.0_181\jre\lib\charsets.jar;c:\jdk1.8.0_181\jre\lib\jfr.jar;c:\jdk1.8.0_181\jre\classes" />
+    <property name="sun.boot.class.path" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\javax.annotation-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\javax.xml.soap-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jaxb-api-osgi.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jaxws-api.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\javaee-endorsed-api-7.0\jsr181-api.jar;c:\jdk1.8.0_181\jre\lib\resources.jar;c:\jdk1.8.0_181\jre\lib\rt.jar;c:\jdk1.8.0_181\jre\lib\sunrsasign.jar;c:\jdk1.8.0_181\jre\lib\jsse.jar;c:\jdk1.8.0_181\jre\lib\jce.jar;c:\jdk1.8.0_181\jre\lib\charsets.jar;c:\jdk1.8.0_181\jre\lib\jfr.jar;c:\jdk1.8.0_181\jre\classes" />
     <property name="javac.target" value="1.8" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src/java" />
@@ -360,8 +360,8 @@
     <property name="libs.struts.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\struts-1.3.10-javadoc.zip" />
     <property name="ignore.failing.tests" value="true" />
     <property name="libs.Comet-GlassFish-v3.classpath" value="" />
-    <property name="web.docbase.dir" value="web" />
     <property name="libs.javaee-web-api-7.0.src" value="" />
+    <property name="web.docbase.dir" value="web" />
     <property name="libs.primefaces.src" value="" />
     <property name="dist.dir" value="dist" />
     <property name="libs.groovy-all.javadoc" value="" />
@@ -372,14 +372,14 @@
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
     <property name="default.javac.source" value="1.8" />
     <property name="debug-transport-by-os" value="dt_shmem" />
-    <property name="libs.MySQLDriver.src" value="" />
     <property name="sun.jnu.encoding" value="Cp1252" />
-    <property name="build.test.results.dir" value="build/test/results" />
+    <property name="libs.MySQLDriver.src" value="" />
     <property name="java.runtime.version" value="1.8.0_181-b13" />
+    <property name="build.test.results.dir" value="build/test/results" />
     <property name="do.tmp.war.package.with.custom.manifest" value="true" />
     <property name="default.javac.target" value="1.8" />
-    <property name="libs.junit_4.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar" />
     <property name="libs.hamcrest.prop-maven-dependencies" value="org.hamcrest:hamcrest-core:1.3:jar" />
+    <property name="libs.junit_4.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_4/junit-4.12.jar" />
     <property name="user.timezone" value="" />
     <property name="nb.junit.single" value="false" />
     <property name="libs.junit_4.displayName" value="JUnit 4.12" />
@@ -390,19 +390,19 @@
     <property name="libs.jstl.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
     <property name="java.ext.dirs" value="c:\jdk1.8.0_181\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
     <property name="libs.metro.src" value="" />
-    <property name="endorsed.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javax.annotation-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javax.xml.soap-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jaxb-api-osgi.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jaxws-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jsr181-api.jar" />
+    <property name="endorsed.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javax.annotation-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/javax.xml.soap-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jaxb-api-osgi.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jaxws-api.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/javaee-endorsed-api-7.0/jsr181-api.jar" />
     <property name="libs.absolutelayout.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\AbsoluteLayout.jar" />
     <property name="excludes" value="" />
-    <property name="libs.metro.classpath" value="C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-api.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-extra.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-rt.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-tools.jar" />
     <property name="libs.restlib.maven-pom" value="" />
+    <property name="libs.metro.classpath" value="C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-api.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-extra.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-rt.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\metro\webservices-tools.jar" />
     <property name="libs.jpa2-persistence.javadoc" value="C:\Program Files\NetBeans 8.2\java\modules\ext\docs\javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="C:\Program Files\NetBeans 8.2\mobility\modules\docs\netbeans_databindingme-api.zip" />
+    <property name="java.class.path" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\mysql-connector-java-8.0.19.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\build\web\WEB-INF\classes;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\junit_4\junit-4.12.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\lib\hamcrest\hamcrest-core-1.3.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\build\test\classes;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\annotations-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina-ant.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina-ha.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina-storeconfig.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina-tribes.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\ecj-4.4.2.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\el-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\jasper-el.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\jasper.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\jsp-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\servlet-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-coyote.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-dbcp.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-i18n-es.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-i18n-fr.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-i18n-ja.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-jdbc.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-jni.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-util-scan.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-util.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-websocket.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\websocket-api.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit4.jar" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
-    <property name="java.class.path" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\mysql-connector-java-8.0.19.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\build\web\WEB-INF\classes;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\junit_4\junit-4.12.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\lib\hamcrest\hamcrest-core-1.3.jar;C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\build\test\classes;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\annotations-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina-ant.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina-ha.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina-storeconfig.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina-tribes.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\catalina.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\ecj-4.4.2.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\el-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\jasper-el.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\jasper.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\jsp-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\servlet-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-api.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-coyote.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-dbcp.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-i18n-es.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-i18n-fr.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-i18n-ja.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-jdbc.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-jni.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-util-scan.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-util.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\tomcat-websocket.jar;C:\Program Files\Apache Software Foundation\Apache Tomcat 8.0.27\lib\websocket-api.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-junit4.jar" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar" />
-    <property name="ant.file.AgileJavaHospitalProject" value="C:\Users\melvinabraham\Documents\NetBeansProjects\Agile1\AgileProject\Software_Code\AgileJavaHospitalProject\build.xml" />
-    <property name="libs.junit_5.javadoc" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-api-5.3.1-javadoc.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-params-5.3.1-javadoc.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-engine-5.3.1-javadoc.jar" />
+    <property name="ant.file.AgileJavaHospitalProject" value="C:\Users\melvinabraham\Documents\NetBeansProjects\AgileProject3\AgileProject\Software_Code\AgileJavaHospitalProject\build.xml" />
+    <property name="libs.junit_5.javadoc" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-api-5.3.1-javadoc.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-params-5.3.1-javadoc.jar;C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/junit_5/junit-jupiter-engine-5.3.1-javadoc.jar" />
     <property name="j2ee.server.type" value="Tomcat" />
     <property name="os.version" value="10.0" />
     <property name="libs.EclipseLink-GlassFish-v3.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
@@ -414,19 +414,19 @@
     <property name="libs.Comet-GlassFish-v3.src" value="" />
     <property name="libs.restlib.javadoc" value="" />
     <property name="war.content.additional" value="" />
+    <property name="nb.internal.action.name" value="test" />
     <property name="j2ee.platform.embeddableejb.classpath" value="" />
     <property name="libs.JAXB-ENDORSED.classpath" value="C:\Program Files\NetBeans 8.2\ide\modules\ext\jaxb\api\jaxb-api.jar" />
-    <property name="nb.internal.action.name" value="test" />
     <property name="forceRedeploy" value="false" />
-    <property name="libs.javaee-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.eclipselink.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\eclipselink.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar" />
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="libs.javaee-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.beans-binding.javadoc" value="C:\Program Files\NetBeans 8.2\java\docs\beansbinding-1.2.1-doc.zip" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
     <property name="java.vm.vendor" value="Oracle Corporation" />
-    <property name="libs.CopyLibs.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/Agile1/AgileProject/Software_Code/AgileJavaHospitalProject/lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
+    <property name="libs.CopyLibs.classpath" value="C:/Users/melvinabraham/Documents/NetBeansProjects/AgileProject3/AgileProject/Software_Code/AgileJavaHospitalProject/lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar" />
     <property name="libs.spring-framework300.classpath" value="C:\Program Files\NetBeans 8.2\ide\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aop-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-aspects-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-beans-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-build-src-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-context-support-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-core-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-expression-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-framework-bom-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jdbc-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-jms-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-orm-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-oxm-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-struts-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-test-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-tx-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-web-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-3.2.7.RELEASE.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.7.RELEASE.jar" />
-    <property name="libs.jsp-compiler.maven-pom" value="" />
     <property name="ant.file.type.AgileJavaHospitalProject-impl" value="file" />
+    <property name="libs.jsp-compiler.maven-pom" value="" />
     <property name="libs.hamcrest.src" value="" />
     <property name="libs.hibernate4-persistence.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\antlr-2.7.7.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\c3p0-0.9.2.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-c3p0-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\mchange-commons-java-0.2.3.4.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\dom4j-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\ehcache-core-2.4.3.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-ehcache-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-core-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\jboss-logging-3.1.3.GA.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-commons-annotations-4.0.4.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-entitymanager-4.3.1.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\javassist-3.18.1-GA.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\jboss-transaction-api_1.2_spec-1.0.0.Final.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-api-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\slf4j-simple-1.6.1.jar;C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpa-2.1-api-1.0.0.Final.jar" />
     <property name="libs.JAXB-ENDORSED.src" value="" />
@@ -438,24 +438,24 @@
     <property name="libs.jsf12.maven-pom" value="" />
     <property name="libs.hibernate4-persistencemodelgen.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\hibernate4\hibernate-jpamodelgen-4.3.1.Final.jar" />
     <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
+    <property name="libs.CopyLibs.displayName" value="CopyLibs Task" />
     <property name="libs.CopyLibs.src" value="" />
     <property name="build.dir" value="build" />
-    <property name="libs.CopyLibs.displayName" value="CopyLibs Task" />
     <property name="libs.jsp-compilation.classpath" value="C:\Program Files\NetBeans 8.2\extide\ant\lib\ant.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\glassfish-jspparser-4.0.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jsf-2_2\javax.faces.jar;C:\Program Files\NetBeans 8.2\enterprise\modules\ext\jstl-api.jar;C:\Program Files\NetBeans 8.2\extide\ant\lib\ant-launcher.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.7 compiled on April 9 2016" />
-    <property name="file.encoding" value="Cp1252" />
+    <property name="selected.browser" value="Chrome" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
-    <property name="jdkBug6558476" value="false" />
+    <property name="file.encoding" value="Cp1252" />
     <property name="javadoc.nonavbar" value="false" />
+    <property name="jdkBug6558476" value="false" />
     <property name="libs.spring-webmvc4.0.classpath" value="C:\Program Files\NetBeans 8.2\java\modules\ext\spring-4\spring-webmvc-4.0.1.RELEASE.jar" />
     <property name="platform.active" value="default_platform" />
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
     <property name="war.ear.name" value="AgileJavaHospitalProject.war" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans 8.2\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="TreatmentFinder.DatabaseTest" name="testdbConnect" time="0.787" />
-  <testcase classname="TreatmentFinder.DatabaseTest" name="testDbQuery" time="3.226" />
-  <system-out><![CDATA[Testing the database query
-]]></system-out>
+  <testcase classname="TreatmentFinder.DatabaseTest" name="testdbConnect" time="0.798" />
+  <testcase classname="TreatmentFinder.DatabaseTest" name="testDbQuery" time="0.655" />
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
