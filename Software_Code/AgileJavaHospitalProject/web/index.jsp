@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -5,6 +6,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"  crossorigin="anonymous">
     <link href="fontawesome-free/css/all.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/51b16e748f.js" crossorigin="anonymous"></script>
+
+    <title>Treatment Finder</title>
+    <script>
+
+        
+
+    </script>
+    <%
+        String search = request.getParameter("desc");
+        String location = request.getParameter("location");
+        String d = request.getParameter("distance");
+        String p = request.getParameter("price");
+        int price = 300000;
+        int distance = 0;
+        String error = request.getParameter("error");
+        if(search == null) search="";
+        if(location == null) location="";
+        if(d == null);
+        else distance = Integer.parseInt(d);
+        if(p == null); 
+        else price = Integer.parseInt(p);
+        if(error == null) error="0";
+        else error = "1";
+    %>
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="style.css">
@@ -21,10 +50,12 @@
           document.getElementById('textInput').value=val;
         }
     </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
         <div class="container">
           <a class="navhead navbar-brand" href="index.html"><h4>Treatment <span class="accent">Finder</span></h4></a>
         </div>
@@ -35,7 +66,9 @@
         <br>
         <h1>Let's find you some affordable</h1>
         <h1>health care!</h1>
+
       <form action="search.jsp" method="post" id="form">
+
         <br>
 
 
@@ -43,6 +76,7 @@
         <div class="form-group">
         <div class="row">
           <div class="col">
+
               <div class="input-group">
                 <div class="input-group-prepend">
                     <select id="searchBy" name="searchBy" class="btn btn-outline-secondary dropdown-toggle">
@@ -63,40 +97,55 @@
                 <input id="browser-location-lat" name="browser-location-lat" type="hidden">
                 <input id="browser-location-lon" name="browser-location-lon" type="hidden">
                 <div class="input-group">
-                    <input id="location-input" name="location" type="text" class="form-control form-control-lg" placeholder="Where are you from?" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+
+                    <input id="location-input" name="location" type="text" class="form-control form-control-lg" value="<% out.print(location); %>" placeholder="Where are you from?" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+
                 <div class="input-group-append">
                     <button id="own-location" class="btn btn-primary" type="button"><i class="fas fa-map-pin"></i></button>
                   </div>
                 </div>
             </div>
             <div class="col">
-              <input placeholder="How many miles are you willing to travel?" type="number" class="form-control form-control-lg" step="5" name="max-distance" min="0" >
+
+              <input id="range" placeholder="How many miles are you willing to travel?" type="number" class="form-control form-control-lg" step="5" name="max-distance" min="0" >
             </div>
           </div>
-            
+            </br>
           <!--Start of row 3-->
           <div class="slidecontainer col-13">
                     <label>Maximum Price</label>
-                    <input type="range" class="custom-range" name="rangeInput" min="1" max="600000" onchange="updateTextInput(this.value);">
-                    <label>$<input type="text" name="price" id="textInput" value="300000" style="border: none;"></label>
+                    <input type="range" class="custom-range" id="range" min="0" max="600000" step="500" oninput="change()" onchange="change()" >
+                    <label>$<input type="text" name="price" id="price" value="<% out.print(price); %>" style="border:none;"></label>
+                    <script type='text/javascript'>
+			function change() {
+  				var value = document.getElementById('range').value ;
+  				document.getElementById('price').value = value;
+			}
+                    </script>
           </div>
         </div>
-          </br>
+          
+          <% 
+            if(error == "1") out.print("<t1><font color=\"red\">No result. Please change options for more results</font></t1>");
+            else out.print("</br>");
+          %>
+          <button type="submit" class="btn btn-primary btn-block search-button">Search</button>
 
-          <button type="submit" id="submit" class="btn btn-primary btn-block search-button">Search</button>
         </div>
       </form>
     </main>
 
+
     <footer class="footer py-5 bg-light">
         <div class="container">
             <div class="row">
-              <h6>© Team 15 2020</h6>
+              <h6>Â© Team 15 2020</h6>
               <div class="float-right">
                 <i class="fab fa-twitter-square fa-2x fa-fw"></i><i class="fab fa-facebook fa-2x fa-fw"></i><i class="fab fa-instagram fa-2x fa-fw"></i>
               </div>
             </div>
         </div>
+
     </footer>
       <script>
     var bLocationLat = document.getElementById("browser-location-lat");
@@ -1286,7 +1335,7 @@
                     }
                 });
             });
-   
+
     </script>
   </body>
 </html>
