@@ -20,16 +20,14 @@
         String search = request.getParameter("desc");
         String location = request.getParameter("location");
         String d = request.getParameter("distance");
-        String p = request.getParameter("price");
-        int price = 300000;
+        
         int distance = 0;
         String error = request.getParameter("error");
         if(search == null) search="";
         if(location == null) location="";
         if(d == null);
         else distance = Integer.parseInt(d);
-        if(p == null); 
-        else price = Integer.parseInt(p);
+        
         if(error == null) error="0";
         else error = "1";
     %>
@@ -115,7 +113,7 @@
           <div class="slidecontainer col-13">
                     <label>Maximum Price</label>
                     <input type="range" class="custom-range" id="range" min="0" max="600000" step="500" oninput="change()" onchange="change()" >
-                    <label>$<input type="text" name="price" id="price" value="<% out.print(price); %>" style="border:none;"></label>
+                    <label>$<input type="text" name="price" id="price" value="300000" style="border:none;"></label>
                     <script type='text/javascript'>
 			function change() {
   				var value = document.getElementById('range').value ;
@@ -139,7 +137,7 @@
     <footer class="footer py-5 bg-light">
         <div class="container">
             <div class="row">
-              <h6>Â© Team 15 2020</h6>
+              <h6>� Team 15 2020</h6>
               <div class="float-right">
                 <i class="fab fa-twitter-square fa-2x fa-fw"></i><i class="fab fa-facebook fa-2x fa-fw"></i><i class="fab fa-instagram fa-2x fa-fw"></i>
               </div>
