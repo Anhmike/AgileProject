@@ -70,17 +70,10 @@
                 </div>
             </div>
             <div class="col">
-              <select name="max-distance" class="form-control form-control-lg" id="exampleFormControlSelect1">
-                <option value="0">How far are you willing to travel?</option>
-                <option value="25">25 miles</option>
-                <option value="50">50 miles</option>
-                <option value="100">100 miles</option>
-                <option value="200">200 miles</option>
-                <option value="400">400 miles</option>
-              </select>
+              <input placeholder="How many miles are you willing to travel?" type="number" class="form-control form-control-lg" step="5" name="max-distance" min="0" >
             </div>
           </div>
-            </br>
+            
           <!--Start of row 3-->
           <div class="slidecontainer col-13">
                     <label>Maximum Price</label>
@@ -137,14 +130,18 @@
     getLocation();
     
     $("#form").on("submit", function(e){
-        // Stop form from submitting if the description/code isn't valid
-        if($(this).val() == "desc" && $.inArray($("#desc").val(), listOfProcedures) == -1) {
-            e.preventDefault();
-        }
-        else if($.inArray($("#desc").val(), listOfCodes) == -1) {
-            e.preventDefault();
-        }
+        var select = $("#searchBy").val();
         
+        if(select === "desc") {
+            if($.inArray($("#desc").val(), listOfProcedures) === -1) {
+                e.preventDefault();
+            }
+        }
+        else {
+            if($.inArray($("#desc").val().replace(/^0+/, ''), listOfCodes) === -1) {
+                e.preventDefault();
+            }
+        }
     })
     
     var listOfCodes = [
