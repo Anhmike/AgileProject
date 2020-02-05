@@ -31,7 +31,7 @@
         
         <main role="main">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navhead navbar-brand" href="index.html"><h4><i class="fas fa-chevron-left accent"></i>  Treatment <span class="accent">Finder</span></h4></a>
+            <a class="navhead navbar-brand" href="index.jsp"><h4><i class="fas fa-chevron-left accent"></i>  Treatment <span class="accent">Finder</span></h4></a>
         </nav>
         <div class="container-fluid">
         <h1>Search Results</h1>
@@ -88,7 +88,15 @@
                 coordinates = new JSONArray(coArr);
             }
                 display = lm.findProvidersInRange(result, maxDistance, coordinates);
-             //Now sorts by distance/ shows distance, but kind of ugly should refactor
+              if(display.isEmpty())
+            {
+                String error="1";
+                out.print("<script language='javascript'>\n");
+                out.print("window.document.location.href='index.jsp?desc="+search+"&price="+price+"&location="+loc+"&distance="+maxDistance+"&error="+error+"';\n");
+                out.print("</script>\n");
+                
+
+            } else {
              for(int i=0; i<display.size(); i++)
             {
                 out.print("<tr>");
@@ -99,6 +107,7 @@
                 
                 out.print("</tr>");
             }
+              }
         %>
         </tbody>
       </table>
