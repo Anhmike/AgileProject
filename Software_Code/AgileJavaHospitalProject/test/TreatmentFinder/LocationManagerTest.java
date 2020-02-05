@@ -44,14 +44,12 @@ public class LocationManagerTest {
      */
     @Test
     public void testGetUserCoordinates() {
-        System.out.println("getUserCoordinates");
-        String userInput = "";
-        LocationManager instance = new LocationManager();
-        JSONArray expResult = null;
-        JSONArray result = instance.getUserCoordinates(userInput);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        LocationManager test = new LocationManager();
+        JSONArray coords1 = test.getUserCoordinates("6 The Logan, Liff, Scotland");
+        
+        
+        assertEquals(coords1.getDouble(0), -3.085410, 1);
+        assertEquals(coords1.getDouble(1), 56.486791, 1);
     }
 
     /**
@@ -59,16 +57,13 @@ public class LocationManagerTest {
      */
     @Test
     public void testFindProvidersInRange() {
-        System.out.println("findProvidersInRange");
-        List<Procedure> result_2 = null;
-        int maxDistance = 0;
-        JSONArray coordsList = null;
-        LocationManager instance = new LocationManager();
-        List<Procedure> expResult = null;
-        List<Procedure> result = instance.findProvidersInRange(result_2, maxDistance, coordsList);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Database testDb = new Database();
+        LocationManager testLocation = new LocationManager();
+        List<Procedure> test = testDb.dbQuery("call lol.searchByDesc('Heart Transplant', 500000)");
+        JSONArray coords = testLocation.getUserCoordinates("1719 Towne Drive, West Chester PA");
+        List<Procedure> procedures = testLocation.findProvidersInRange(test, 50, coords);
+        
+        assertEquals(procedures.get(0).getTotalPayments(), 304934.0, 1);
     }
     
 }

@@ -43,17 +43,24 @@ public class HelperTest {
     @Test
     public void testDistance() {
         System.out.println("distance");
-        double lat1 = 0.0;
-        double lat2 = 0.0;
-        double lon1 = 0.0;
-        double lon2 = 0.0;
+        //Point 1
+        //56.457025, -2.995702
+        double lon1 = -2.995702;
+        double lat1 = 56.457025;
         double el1 = 0.0;
+        
+        //Point 2
+        //56.486758, -3.085351
+        double lon2 = -3.085351;
+        double lat2 = 56.486758;
         double el2 = 0.0;
-        double expResult = 0.0;
+        
+        
+        double expResult =  6420.0;
         double result = Helper.distance(lat1, lat2, lon1, lon2, el1, el2);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result,5.0);
+
+
     }
     
 }
