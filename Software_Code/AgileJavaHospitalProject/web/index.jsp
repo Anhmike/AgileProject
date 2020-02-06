@@ -104,6 +104,7 @@
                 </div>
             </div>
             <div class="col">
+
         <div class="input-group">
                 <div class="input-group-append">
           
@@ -112,6 +113,7 @@
               <div class="input-group-text">miles</div>
         </div>
         </div>
+
           </div>
             </br>
           <!--Start of row 3-->
@@ -139,17 +141,16 @@
     </main>
 
 
-    <footer class="footer py-5 bg-light">
-        <div class="container">
-            <div class="row">
-              <h6>© Team 15 2020</h6>
+    <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+              <p class="p-0 m-0">Â© Team 15 2020</p>
               <div class="float-right">
-                <i class="fab fa-twitter-square fa-2x fa-fw"></i><i class="fab fa-facebook fa-2x fa-fw"></i><i class="fab fa-instagram fa-2x fa-fw"></i>
+                <i class="fab fa-twitter-square fa-2x fa-fw align-middle"></i><i class="fab fa-facebook fa-2x fa-fw align-middle"></i><i class="fab fa-instagram fa-2x fa-fw align-middle"></i>
               </div>
+                </div>
             </div>
-        </div>
-
-    </footer>
+        </footer>
       <script>
     var bLocationLat = document.getElementById("browser-location-lat");
     var bLocationLon = document.getElementById("browser-location-lon");
