@@ -5,6 +5,9 @@
  */
 package TreatmentFinder;
 
+import java.util.List;
+import org.json.JSONArray;
+
 /**
  *
  * @author melvinabraham
@@ -38,5 +41,48 @@ public class Helper {
 
     return Math.sqrt(distance);
 }
+    
+    public List<Procedure> getResult(String search, String price, String searchBy) { 
+        Database newDB = new Database();
+        double priceNum = Double.parseDouble(price);
+        String query;
+        if (searchBy.equals("code")) {
+            query = "call lol.searchByCode(\"" + search +"\","+ priceNum + ")";
+        }
+        else {
+            query = "call lol.searchByDesc(\"" + search +"\","+ priceNum + ")";
+        }
+        
+         List<Procedure> result = newDB.dbQuery(query);
+         
+         return result;
+    }
+    
+    public JSONArray getCoordinates(String location, String latitude, String longitude) {
+        JSONArray coordinates;
+        LocationManager lManager = new LocationManager();
+        if( location != null && !location.isEmpty()) {
+                 coordinates = lManager.getUserCoordinates(location);
+            }
+            else {
+                double lat = Double.parseDouble(latitude);
+                double lon = Double.parseDouble(longitude);
+                
+                double[] coArr = {lon, lat};
+                coordinates = new JSONArray(coArr);
+            }
+        
+        return coordinates;
+    }
+    
+    public List<Procedure> getListInRange(String search, String price, String searchBy, String location, String lat, String lon, String maxDist) { 
+        LocationManager lManager = new LocationManager();
+        int maxDistNum = Integer.parseInt(maxDist);
+        List<Procedure> allResult = getResult(search, price, searchBy);
+        JSONArray coordinates = getCoordinates(location, lat, lon);
+        List<Procedure> filteredResult = lManager.findProvidersInRange(allResult, maxDistNum, coordinates);
+        
+        return filteredResult;
+    }
     
 }

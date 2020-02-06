@@ -105,8 +105,15 @@
             </div>
             <div class="col">
 
-              <input placeholder="How many miles are you willing to travel?" type="number" class="form-control form-control-lg" step="5" name="max-distance" min="0" >
-            </div>
+        <div class="input-group">
+                <div class="input-group-append">
+          
+        </div>
+              <input  placeholder="How many miles are you willing to travel?" type="number" class="form-control form-control-lg" step="5" name="max-distance" min="0" >
+              <div class="input-group-text">miles</div>
+        </div>
+        </div>
+
           </div>
             </br>
           <!--Start of row 3-->
@@ -137,7 +144,7 @@
     <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
-              <p class="p-0 m-0">© Team 15 2020</p>
+              <p class="p-0 m-0">Â© Team 15 2020</p>
               <div class="float-right">
                 <i class="fab fa-twitter-square fa-2x fa-fw align-middle"></i><i class="fab fa-facebook fa-2x fa-fw align-middle"></i><i class="fab fa-instagram fa-2x fa-fw align-middle"></i>
               </div>
