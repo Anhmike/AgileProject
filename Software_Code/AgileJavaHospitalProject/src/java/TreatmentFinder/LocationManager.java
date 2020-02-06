@@ -59,17 +59,15 @@ public class LocationManager {
     */
     public List<Procedure> findProvidersInRange(List<Procedure> result, int maxDistance, JSONArray coordsList) { 
         List<Procedure> display = new ArrayList();
+        
+        if(maxDistance == 0)
+            {
+                maxDistance = 100;
+            }
+        
         for(Procedure obj : result)
                 {
-                    if(maxDistance == 0)
-                    {
-                        maxDistance = 100;
-                    }
-                    
-                    ArrayList temp = new ArrayList();
-                    temp.add(obj.getProviderId());
                     double miles = Helper.distance(coordsList.getDouble(1), obj.getLatitude(), coordsList.getDouble(0), obj.getLongitude(), 0.0, 0.0) / 1609;
-                    temp.add(String.valueOf(miles));
                     if(miles < maxDistance)
                     {
                         obj.setDistance(miles);
