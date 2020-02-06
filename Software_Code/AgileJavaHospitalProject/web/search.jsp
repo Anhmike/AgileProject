@@ -57,42 +57,19 @@
             String price = request.getParameter("price");
             String search = request.getParameter("desc");
             String searchBy = request.getParameter("searchBy");
-            
-            JSONArray coordinates = null;   
-
-            int maxDistance = Integer.parseInt(request.getParameter("max-distance"));
-            Database test = new Database();
-            
-            List<Procedure> result = null;
-            
-            if(searchBy.equals("code")) {
-                result = test.dbQuery("call lol.searchByCode(\"" + search +"\","+ price + ")");
-            }
-            else {
-                result = test.dbQuery("call lol.searchByDesc(\"" + search +"\","+ price + ")");
-            }
-  
-            List<Procedure> display = new ArrayList();
-            LocationManager lm = new LocationManager();
+            String lat = request.getParameter("browser-location-lat");
+            String lon = request.getParameter("browser-location-lon");
             String loc = request.getParameter("location");
-            String inputLocation = "";
+            String maxDist = request.getParameter("max-distance");
+            Helper controlHelper = new Helper();
             
-            if( loc != null && !loc.isEmpty()) {
-                 coordinates = lm.getUserCoordinates(loc);
-            }
-            else {
-                double lat = Double.parseDouble(request.getParameter("browser-location-lat"));
-                double lon = Double.parseDouble(request.getParameter("browser-location-lon"));
-                
-                double[] coArr = {lon, lat};
-                coordinates = new JSONArray(coArr);
-            }
-                display = lm.findProvidersInRange(result, maxDistance, coordinates);
+            
+            List<Procedure> display = controlHelper.getListInRange(search, price, searchBy, loc, lat, lon, maxDist);
               if(display.isEmpty())
             {
                 String error="1";
                 out.print("<script language='javascript'>\n");
-                out.print("window.document.location.href='index.jsp?desc="+search+"&price="+price+"&location="+loc+"&distance="+maxDistance+"&error="+error+"';\n");
+                out.print("window.document.location.href='index.jsp?desc="+search+"&price="+price+"&location="+loc+"&distance="+maxDist+"&error="+error+"';\n");
                 out.print("</script>\n");
                 
 
@@ -155,7 +132,7 @@
         var map = new mapboxgl.Map({
                   container: 'map',
                   style: 'mapbox://styles/mapbox/light-v10',
-                  center: {lng: <% out.print(coordinates.get(0));%>, lat: <% out.print(coordinates.get(1));%>},
+                  center: {lng: <% out.print(controlHelper.getCoordinates(loc, lat, lon).getDouble(0));%>, lat: <% out.print(controlHelper.getCoordinates(loc, lat, lon).getDouble(1));%>},
                   zoom: 9
                 });
         var locations = {

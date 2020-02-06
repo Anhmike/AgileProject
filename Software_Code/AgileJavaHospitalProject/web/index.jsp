@@ -104,9 +104,14 @@
                 </div>
             </div>
             <div class="col">
-
-              <input id="range" placeholder="How many miles are you willing to travel?" type="number" class="form-control form-control-lg" step="5" name="max-distance" min="0" >
-            </div>
+        <div class="input-group">
+                <div class="input-group-append">
+          
+        </div>
+              <input  placeholder="How many miles are you willing to travel?" type="number" class="form-control form-control-lg" step="5" name="max-distance" min="0" >
+              <div class="input-group-text">miles</div>
+        </div>
+        </div>
           </div>
             </br>
           <!--Start of row 3-->
