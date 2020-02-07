@@ -54,7 +54,7 @@
           <tr>
             <th scope="col" style="width:35%">Provider Name</th>
             <th scope="col">Average Cost</th>
-            <th scope="col" >Distance (miles)</th>
+            <th scope="col" >Distance</th>
           </tr>
         </thead>
         <tbody>
@@ -93,7 +93,7 @@
                 //out.print("<td>" + display.get(i).getDRG() + "</td>");
                 out.print("<td>" + display.get(i).getProviderName() + "</td>");
                 out.print("<td>" + "$" + display.get(i).getTotalPayments() + "</td>");
-                out.print("<td>" + Math.round(display.get(i).getDistance()) + "</td>");
+                out.print("<td data-order='" + Math.round(display.get(i).getDistance()) + "'>" + Math.round(display.get(i).getDistance()) + " miles</td>");
                 
                 out.print("</tr>");
             }
