@@ -54,7 +54,7 @@
           <tr>
             <th scope="col" style="width:35%">Provider Name</th>
             <th scope="col">Average Cost</th>
-            <th scope="col" >Distance</th>
+            <th scope="col" >Distance (miles)</th>
           </tr>
         </thead>
         <tbody>
@@ -70,7 +70,13 @@
             String maxDist = request.getParameter("max-distance");
             Helper controlHelper = new Helper();
             
+            if(maxDist == "") { 
+                maxDist = "100";
+            }
             
+            
+            
+           
             List<Procedure> display = controlHelper.getListInRange(search, price, searchBy, loc, lat, lon, maxDist);
               if(display.isEmpty())
             {
@@ -87,11 +93,12 @@
                 //out.print("<td>" + display.get(i).getDRG() + "</td>");
                 out.print("<td>" + display.get(i).getProviderName() + "</td>");
                 out.print("<td>" + "$" + display.get(i).getTotalPayments() + "</td>");
-                out.print("<td>" + Math.round(display.get(i).getDistance()) + " miles" + "</td>");
+                out.print("<td>" + Math.round(display.get(i).getDistance()) + "</td>");
                 
                 out.print("</tr>");
             }
               }
+
         %>
         </tbody>
       </table>
@@ -136,7 +143,8 @@
                 scrollY: 400,
                 scroller: true,
                 "iDisplayLength": -1,
-                info: false
+                info: false,
+                "order": [[ 2, 'asc' ]]
                 }
              );
         } );

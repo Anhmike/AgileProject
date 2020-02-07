@@ -83,7 +83,7 @@
                     </select>
                   
                 </div>
-                <input name="desc" id="desc" autocomplete="off" type="text" class="form-control form-control-lg" placeholder="What are you looking for?" required/>
+                <input name="desc" id="desc" autocomplete="off" type="text" class="form-control form-control-lg" placeholder="eg - 023" required/>
               </div>
 
           </div>
@@ -129,7 +129,9 @@
                     </script>
           </div>
         </div>
-          
+          <div id="error">
+              
+          </div>
           <% 
             if(error == "1") out.print("<t1><font color=\"red\">No result. Please change options for more results</font></t1>");
             else out.print("</br>");
@@ -144,7 +146,7 @@
     <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
-              <p class="p-0 m-0">Â© Team 15 2020</p>
+              <p class="p-0 m-0">© Team 15 2020</p>
               <div class="float-right">
                 <i class="fab fa-twitter-square fa-2x fa-fw align-middle"></i><i class="fab fa-facebook fa-2x fa-fw align-middle"></i><i class="fab fa-instagram fa-2x fa-fw align-middle"></i>
               </div>
@@ -188,11 +190,13 @@
         if(select === "desc") {
             if($.inArray($("#desc").val(), listOfProcedures) === -1) {
                 e.preventDefault();
+                $("#error").html("<t1><font color=\"red\">This is not a valid procedure, please try again using a suggested procedure.</font></t1>");
             }
         }
         else {
             if($.inArray($("#desc").val().replace(/^0+/, ''), listOfCodes) === -1) {
                 e.preventDefault();
+                $("#error").html("<t1><font color=\"red\">This is not a valid procedure, please try again using a suggested procedure.</font></t1>");
             }
         }
     })
@@ -1339,6 +1343,25 @@
                     }
                 });
             });
+            
+            document.getElementById("searchBy").addEventListener('change', changeSearchBar);
+            
+            function changeSearchBar() {
+               var searchBy = document.getElementById("searchBy").value;
+                var searchBar = document.getElementById("desc");
+                if(searchBy == "code")
+                {
+                    searchBar.placeholder = "eg - 023";
+                }
+                else
+                {
+                    searchBar.placeholder = "eg - Chest pain";
+                } 
+                
+                searchBar.value = "";
+                document.getElementById("error").innerHTML = "";
+            }
+            
 
     </script>
   </body>
