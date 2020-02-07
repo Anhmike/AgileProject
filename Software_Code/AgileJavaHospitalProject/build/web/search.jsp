@@ -70,7 +70,13 @@
             String maxDist = request.getParameter("max-distance");
             Helper controlHelper = new Helper();
             
+            if(maxDist == "") { 
+                maxDist = "100";
+            }
             
+            
+            
+           
             List<Procedure> display = controlHelper.getListInRange(search, price, searchBy, loc, lat, lon, maxDist);
               if(display.isEmpty())
             {
@@ -92,6 +98,7 @@
                 out.print("</tr>");
             }
               }
+
         %>
         </tbody>
       </table>
