@@ -126,7 +126,6 @@
                       <label class="col-12 text-right" >Maximum price</label>
                 </div>
               </div> 
-                    <label>Maximum Price</label>
                     <input type="range" class="custom-range" id="range" min="0" max="600000" step="500" oninput="change()" onchange="change()" >
                     <label>$<input type="text" name="price" id="price" value="300000" style="border:none;"></label>
                     <script type='text/javascript'>
