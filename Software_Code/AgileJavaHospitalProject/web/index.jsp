@@ -118,6 +118,14 @@
             </br>
           <!--Start of row 3-->
           <div class="slidecontainer col-13">
+		  <div class="row">
+                <div class="col">
+                      <label>Minimum Price </label>
+                </div>
+                <div class="col">
+                      <label class="col-12 text-right" >Maximum price</label>
+                </div>
+              </div> 
                     <label>Maximum Price</label>
                     <input type="range" class="custom-range" id="range" min="0" max="600000" step="500" oninput="change()" onchange="change()" >
                     <label>$<input type="text" name="price" id="price" value="300000" style="border:none;"></label>
@@ -146,7 +154,7 @@
     <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
-              <p class="p-0 m-0">© Team 15 2020</p>
+              <p class="p-0 m-0">Â© Team 15 2020</p>
               <div class="float-right">
                 <i class="fab fa-twitter-square fa-2x fa-fw align-middle"></i><i class="fab fa-facebook fa-2x fa-fw align-middle"></i><i class="fab fa-instagram fa-2x fa-fw align-middle"></i>
               </div>
