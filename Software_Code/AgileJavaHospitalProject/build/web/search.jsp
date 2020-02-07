@@ -136,7 +136,8 @@
                 scrollY: 400,
                 scroller: true,
                 "iDisplayLength": -1,
-                info: false
+                info: false,
+                "order": [[ 2, 'asc' ]]
                 }
              );
         } );
