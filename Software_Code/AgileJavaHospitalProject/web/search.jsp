@@ -33,7 +33,7 @@
         
          <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-              <a class="navhead navbar-brand" href="index.jsp"><h4>Treatment <span class="accent">Finder</span></h4></a>
+              <a class="navhead navbar-brand" href="index.jsp"><h4><i class="fas fa-chevron-left"></i> Treatment <span class="accent">Finder</span></h4></a>
             </div>
         </nav>
        
